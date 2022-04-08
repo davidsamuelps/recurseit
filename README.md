@@ -1,2 +1,2 @@
 # recurseit
-Repo for blog in Hugo
+Repo created to migrate blog from Wordpress to Hugo
