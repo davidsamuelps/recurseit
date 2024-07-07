@@ -1,0 +1,8 @@
+github.com/half-duplex/hugo-arcana v0.0.0-20240507162146-4243c0f7c9d1 h1:a9cbFljyVqna9+KacZf6G2bWoJ87KdCXzrs5l+Dk7/M=
+github.com/half-duplex/hugo-arcana v0.0.0-20240507162146-4243c0f7c9d1/go.mod h1:Za8XD0Ysz7TWBA2kih2Q7BE4e/FJ1O/hZUHglcXzXvQ=
+github.com/joeroe/risotto v0.4.0 h1:j1Hqnr/wWuKjDGPwKhpOs0yH0L+X6kLLgObxH4APUO8=
+github.com/joeroe/risotto v0.4.0/go.mod h1:50XvgDGSY2RDbp86FP3nWCnUrJgVQAm9uWsWPstFd54=
+github.com/saadjsct/npqhugo v0.0.0-20230327225325-c67514134768 h1:uo2nTS4/InURDv7lA82k0HBWC2L3NgzwSvNZ9cEqv+Q=
+github.com/saadjsct/npqhugo v0.0.0-20230327225325-c67514134768/go.mod h1:ujrILUvCv1reLzRqfOrov5r1kaDwufLduLbL1VqlN4A=
+github.com/yihui/hugo-xmin v0.0.0-20240524030244-a72100485da4 h1:TV3BjyFKajNEm6AF6nJSSwduI4x3MIqsRzMyynrvQdM=
+github.com/yihui/hugo-xmin v0.0.0-20240524030244-a72100485da4/go.mod h1:RiCR4psTF4iydlh4bR9BijKIHmivp7IeBaokx0CvzRA=
