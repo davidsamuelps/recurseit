@@ -33,9 +33,9 @@ theme = ["m10c"]
   description = "Here goes a description about David - assuming he actually knows how to describe himself"
   menu_item_separator = " - "
   [[params.social]]
-    icon = "github"
-    name = "Github"
-    url = "https://github.com/davidsamuelps"
+    icon = "linkedin"
+    name = "LinkedIn"
+    url = "https://linkedin.com/in/davidsamuelps"
   [[params.social]]
     icon = "twitter"
     name = "davidsamuelps"
