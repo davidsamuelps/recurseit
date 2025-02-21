@@ -50,7 +50,7 @@ A common scenario can be depicted as follows: A site design covering a specific 
 
 A common way to approach this situation is through 1:1 NAT deployed in the routers at the edge.
 
-![](https://recurseit.files.wordpress.com/2021/03/2021-03-05-14_54_24-service-side-nat.vsd-compatibility-mode-visio-standard.png?w=760)
+![](https://recurseit.com/content/post/2021/03/2021-03-05-cisco-sd-wan-service-side-nat/images/2021-03-05-14_54_24-service-side-nat.vsd-compatibility-mode-visio-standard.png)
 
 Legacy site diagram
 
