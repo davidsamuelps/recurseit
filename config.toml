@@ -3,7 +3,8 @@ languageCode = 'en-us'
 title = "RecurseIT"
 
 #THEME#
-theme = ["m10c"]
+#theme = ["m10c"]
+theme = ["m10c-27-02-2024"]
 
 #THEME MODULE#
 #[module]
