@@ -18,7 +18,7 @@ tags:
   - "viptela"
 ---
 
-Among Cisco SD-WAN's tools to steer or influence traffic across the overlay, the data policies are the ones providing the highest flexibility. For a primer about SD-WAN Data Policies, please refer to this article: [Cisco SD-WAN Data Policies](https://recurseit.com/2021/01/27/cisco-sd-wan-data-policies/).
+Among Cisco SD-WAN's tools to steer or influence traffic across the overlay, the data policies are the ones providing the highest flexibility. For a primer about SD-WAN Data Policies, please refer to this article: [Cisco SD-WAN Data Policies](https://recurseit.com/post/2021/01/2021-01-27-cisco-sd-wan-data-policies/).
 
 One of the SD-WAN Data Policy applications is the Service Side NAT. Compared to traditional networking where NAT deployment is rather straightforward, Service Side NAT in SD-WAN is a corner case whose deployment logic can initially be elusive. This document will describe the SD-WAN Service Side NAT principles and deployment as a practical case study.
 
