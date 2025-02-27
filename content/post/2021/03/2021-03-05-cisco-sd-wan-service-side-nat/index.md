@@ -176,15 +176,15 @@ Caveats to consider in the configuration above:
 
 #### CLI Policy - vManage
 
-![](images/2021-03-05-18_18_54-2021-03-05-16_43_29-2-cisco-vmanage-e28094-mozilla-firefox-1)
+![](images/Policy-1.png)
 
 Data Policy configuration
 
-![](images/2021-03-05-18_26_34-2021-03-05-16_44_42-2-cisco-vmanage-e28094-mozilla-firefox)
+![](images/Policy-2.png)
 
 Modifying default action of the Data Policy
 
-![](images/2021-03-05-18_27_52-2021-03-05-16_58_06-2-cisco-vmanage-e28094-mozilla-firefox)
+![](images/Policy-3.png)
 
 Applying Data Policy
 
