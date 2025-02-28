@@ -41,10 +41,10 @@ Policies can be provisioned in two ways:
 
 ## Data Policy Structure (in CLI format)
 
-- ![](https://recurseit.files.wordpress.com/2021/01/image2021-1-5_10-12-47.png?w=488)
+- ![](images/DP-cli-1)
     
 
-- ![](https://recurseit.files.wordpress.com/2021/01/image2021-1-5_10-13-33.png?w=409)
+- ![](images/DP-cli-2)
     
 
 Text version:
