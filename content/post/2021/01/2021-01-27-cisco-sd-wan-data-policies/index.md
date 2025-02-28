@@ -511,4 +511,4 @@ Hope this post is useful to you!
 
 David
 
-Resources: [https://recurseit.com/2020/02/26/resources-for-the-cisco-sd-wan-exam/](https://recurseit.com/2020/02/26/resources-for-the-cisco-sd-wan-exam/)
+Resources: [Resources for the Cisco SD-WAN exam](https://recurseit.com/post/2020/02/2020-02-26-resources-for-the-cisco-sd-wan-exam/)
