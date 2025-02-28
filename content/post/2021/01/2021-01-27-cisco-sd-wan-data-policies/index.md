@@ -41,10 +41,10 @@ Policies can be provisioned in two ways:
 
 ## Data Policy Structure (in CLI format)
 
-- ![](images/DP-cli-1.png)
+![](images/DP-cli-1.png)
     
 
-- ![](images/DP-cli-2.png)
+![](images/DP-cli-2.png)
     
 
 Text version:
@@ -155,17 +155,17 @@ Among the Data Policies there are 3 main types of policies that can be configure
 
 The AAR policy relies on the BFD probes sent through the IPsec tunnels between Edge appliances. The results of the probes are stored in buckets, and each bucket has a specific duration/length. A mean average calculation of all the buckets is the result observed by the solution when reporting link quality. The group of thresholds to be met (and to which the quality of the links are compared) is called SLA.
 
-- ![](images/AAR-buckets.png)
+![](images/AAR-buckets.png)
     
 
 The average nature of the calculation of the values drives a certain tolerance factor, reducing the responsiveness in expense of stability. In other words: for the solution to detect a brownout condition in a link given default values, it would require at least one bucket to be filled (10 minutes) so a change can be triggered. 
 
-- ![](images/AAR-path-convergence.png)
+![](images/AAR-path-convergence.png)
     
 
  These default values can be customized in order to accommodate more aggressive/sensitive SLA requirements:
 
-- ![](images/AAR-algorithm.png)
+![](images/AAR-algorithm.png)
     
 
 #### Example AAR Policy:
