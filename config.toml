@@ -31,7 +31,7 @@ theme = ["m10c-27-02-2024"]
 
 [params]
   author = "David Penaloza"
-  description = "Here goes a description about David - assuming he actually knows how to describe himself"
+  description = "Network engineer and architect, passionate about learning, collaborating, sharing and hugging, with an uncanny ability to over-speak."
   menu_item_separator = " - "
   avatar = "https://recurseit.com/avatar.jpg"
   [[params.social]]
