@@ -41,10 +41,10 @@ Policies can be provisioned in two ways:
 
 ## Data Policy Structure (in CLI format)
 
-- ![](images/DP-cli-1)
+- ![](images/DP-cli-1.png)
     
 
-- ![](images/DP-cli-2)
+- ![](images/DP-cli-2.png)
     
 
 Text version:
