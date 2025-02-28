@@ -120,7 +120,7 @@ Data Policies can be applied in three modes (note the direction is from the Edge
 - From-Tunnel (Downstream - towards LAN from the WAN)
 - All (Both Up- and Downstream)
 
-![](https://lh5.googleusercontent.com/ICHR_alOSxDwiS8WuoKhBvfZDei3zMznh79Q6mOQ-RyQLu8i0IwvQSGA2b46uBJWk6wdqg8umiCbwYmk-xe3IQoIAHkAWJiDla12cnWNY7LAzcYWuCV9qRCEzaI6Vh2UW0S-yB6pgQA)
+![](images/DP-directions.png)
 
 Different policies can be used if applied in different direction. The most common to direction to apply a policy is Upstream.
 
@@ -155,17 +155,17 @@ Among the Data Policies there are 3 main types of policies that can be configure
 
 The AAR policy relies on the BFD probes sent through the IPsec tunnels between Edge appliances. The results of the probes are stored in buckets, and each bucket has a specific duration/length. A mean average calculation of all the buckets is the result observed by the solution when reporting link quality. The group of thresholds to be met (and to which the quality of the links are compared) is called SLA.
 
-- ![](https://recurseit.files.wordpress.com/2021/01/2021-01-27-13_11_00-task-view.png?w=1024)
+- ![](images/AAR-buckets.png)
     
 
 The average nature of the calculation of the values drives a certain tolerance factor, reducing the responsiveness in expense of stability. In other words: for the solution to detect a brownout condition in a link given default values, it would require at least one bucket to be filled (10 minutes) so a change can be triggered. 
 
-- ![](https://recurseit.files.wordpress.com/2021/01/2021-01-27-14_04_56-task-view.png?w=1024)
+- ![](images/AAR-path-convergence.png)
     
 
  These default values can be customized in order to accommodate more aggressive/sensitive SLA requirements:
 
-- ![](https://recurseit.files.wordpress.com/2021/01/image2021-1-5_14-41-43.png?w=1024)
+- ![](images/AAR-algorithm.png)
     
 
 #### Example AAR Policy:
