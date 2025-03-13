@@ -19,6 +19,19 @@ tags:
 #  - "commit"
 ---
 
+Its been a while since my last blog. Hopefully, and with some discipline, I will continue to blog in a more constant manner.
+
+This blog is the first part of several (number to be defined) describing the process and steps I took to migrate my blog from Wordpress to CLoudFlare pages, using HUGO and Github.
+
+## To WordPress or not-to WordPress
+
+Years ago I decided to start blogging, and I did, although mostly in other platforms as a guest and infrequently by myself. That on its own was not a problem, however, whether I blogged or not, mantaining a blog requires a monetary investment. At a minimum, you need a [registered domain](https://wordpress.com/support/domains/domain-pricing-and-available-tlds/?currency=EUR).
+
+In my case, WordPress seemed like the best choice at the time: you could get the domain registered and also the blogging platform. However, if you wish your blog to be "ad-free" (otherwise the site would be drowing with superflous and obnoxious marketing), you also must get ready to [pay a premium](https://wordpress.com/pricing/).
+
+Logically, paying for something you infrequently use is a piffle. In the meantime, I heard from some friends who moved away from WordPress for the same reasons...
+
+
 Among Cisco SD-WAN's tools to steer or influence traffic across the overlay, the data policies are the ones providing the highest flexibility. For a primer about SD-WAN Data Policies, please refer to this article: [Cisco SD-WAN Data Policies](https://recurseit.com/post/2021/01/2021-01-27-cisco-sd-wan-data-policies/).
 
 One of the SD-WAN Data Policy applications is the Service Side NAT. Compared to traditional networking where NAT deployment is rather straightforward, Service Side NAT in SD-WAN is a corner case whose deployment logic can initially be elusive. This document will describe the SD-WAN Service Side NAT principles and deployment as a practical case study.
