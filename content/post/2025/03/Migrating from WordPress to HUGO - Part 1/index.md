@@ -25,9 +25,9 @@ Years ago I decided to start blogging, and I did, although mostly in other platf
 
 In my case, WordPress seemed like the best choice at the time (around 2016): you could get the domain registered and also the blogging platform. Ironically, the platform's "ad-free" plan (otherwise the site would be flooded with superflous and obnoxious marketing), was indeed [not free at all](https://wordpress.com/pricing/). 
 
-Given my ocassional blogging, the price tag was not appropiate. Paying for something you infrequently use is, at best, a piffle, especially if there is a better/cheaper/faster opcion at your disposal out there that could fit your situation better.
+Given my ocassional blogging, the price tag was not appropiate. Paying for something you infrequently use is, at best, a piffle, especially if there is a better/cheaper/faster option at your disposal out there that could fit your situation better.
 
-Over time I kept hearing that some friends were migrating to Hugo, and also were able to deploy static, light (and ad-free!) websites in developer pages (Github/CloudFlare). With certain aprehension (given my minimal skills) but also the convinction of saving some bucks (the renewal date was approaching) and a bit of curiosity to learn something new; it simply felt like the way to go.
+Over time I kept hearing that some friends were migrating to Hugo, and also were able to deploy static, light (and ad-free!) websites in developer pages (Github/CloudFlare). With certain aprehension (given my minimal coding skills) but also the convinction of saving some bucks (the renewal date was approaching) and a bit of curiosity to learn something new; it simply felt like the way to go.
 
 If you, like me, want to know where to start (and are less of a coding neophyite than me), this series of blog posts will get you there.
 
