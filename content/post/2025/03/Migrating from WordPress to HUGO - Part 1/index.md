@@ -21,7 +21,7 @@ This blog is the first part of several (number to be defined) describing the pro
 
 ## To WordPress, or not to WordPress
 
-Years ago I decided to start blogging, and I did, although mostly in other platforms as a guest and infrequently by myself. That on its own was not a problem, however, mantaining a blog requires time, effort and, money. Strictly speaking about money: at a minimum, you need a [registered domain](https://wordpress.com/support/domains/domain-pricing-and-available-tlds/?currency=EUR).
+Years ago I decided to start blogging, and I did, although mostly in other platforms as a guest and infrequently by myself. That on its own was not a problem, however, mantaining a blog requires time, effort and money. Strictly speaking about money: at a minimum, you need a [registered domain](https://wordpress.com/support/domains/domain-pricing-and-available-tlds/?currency=EUR).
 
 In my case, WordPress seemed like the best choice at the time (around 2016): you could get the domain registered and also the blogging platform. Ironically, the platform's "ad-free" plan (otherwise the site would be flooded with superflous and obnoxious marketing), was indeed [not free at all](https://wordpress.com/pricing/). 
 
