@@ -19,7 +19,7 @@ tags:
 
 This blog is the first part of several (number to be defined) describing the process and steps I took to migrate my blog from Wordpress to CLoudFlare pages, using HUGO and Github.
 
-## To WordPress, or not to WordPress
+## To WordPress, or not to WordPress, that is the
 
 Years ago I decided to start blogging, and I did, although mostly in other platforms as a guest and infrequently by myself. That on its own was not a problem, however, mantaining a blog requires time, effort and, money. Strictly speaking about money: at a minimum, you need a [registered domain](https://wordpress.com/support/domains/domain-pricing-and-available-tlds/?currency=EUR).
 
@@ -88,10 +88,6 @@ Your deployment can be good and cheap at the beginning, and the swiftness of it 
 If you wish to have a custom domain (e.g. xyz.com) there is a yearly payment to register the domain with CloudFlare. In my case, it was ~11 Euro/year. Equating to 2-3 coffees, depending on where you live.
 
 **Bonus**: if you run a pages.dev website (called developer platform), you get access to the free tier/tools they offer as a CDN/Hosting platform.
-
-Among Cisco SD-WAN's tools to steer or influence traffic across the overlay, the data policies are the ones providing the highest flexibility. For a primer about SD-WAN Data Policies, please refer to this article: [Cisco SD-WAN Data Policies](https://recurseit.com/post/2021/01/2021-01-27-cisco-sd-wan-data-policies/).
-
-One of the SD-WAN Data Policy applications is the Service Side NAT. Compared to traditional networking where NAT deployment is rather straightforward, Service Side NAT in SD-WAN is a corner case whose deployment logic can initially be elusive. This document will describe the SD-WAN Service Side NAT principles and deployment as a practical case study.
 
 ## Closing
 
