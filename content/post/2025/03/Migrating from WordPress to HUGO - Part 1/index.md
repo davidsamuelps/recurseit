@@ -35,7 +35,7 @@ If you, like me, want to know where to start (and are less of a coding neophyte 
 
 Hugo is a framework for website building. With a bit of HTML markup, you can build a simple, yet efficient website that will suit your needs.
 
-One of its advantages is its Open-source nature, which naturally builds a community around it that motivates its growth and development.
+One of its advantages is its open-source nature, which naturally builds a community around it that motivates its growth and development.
 
 What do you (minimally) need?
 - A text editor (I started with nano in linux)
