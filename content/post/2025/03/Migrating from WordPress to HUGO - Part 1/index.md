@@ -19,7 +19,7 @@ tags:
 
 This blog is the first part of several (number to be defined) describing the process and steps I took to migrate my blog from Wordpress to CLoudFlare pages, using HUGO and Github.
 
-## To WordPress, or not to WordPress, that is the
+## To WordPress, or not to WordPress
 
 Years ago I decided to start blogging, and I did, although mostly in other platforms as a guest and infrequently by myself. That on its own was not a problem, however, mantaining a blog requires time, effort and, money. Strictly speaking about money: at a minimum, you need a [registered domain](https://wordpress.com/support/domains/domain-pricing-and-available-tlds/?currency=EUR).
 
