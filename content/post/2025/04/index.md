@@ -10,7 +10,7 @@ tags:
   - "cloudflare"
   - "developer"
   - "html"
-  - "markup"
+  - "markdown"
   - "git"
   - "github"
   - "code"

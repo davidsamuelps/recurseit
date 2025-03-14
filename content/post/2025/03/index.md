@@ -1,7 +1,7 @@
 ---
 title: "Migrating from Wordpress to HUGO - Part 1"
-date: "2025-03-05"
-draft: true
+date: "2025-03-14"
+#draft: true
 #categories: 
 #  - "ccnp"
 tags: 
@@ -10,205 +10,97 @@ tags:
   - "cloudflare"
   - "developer"
   - "html"
-  - "markup"
+  - "markdown"
   - "git"
   - "github"
   - "code"
-#  - "push"
-#  - "pull"
-#  - "commit"
+  - "repository"
 ---
-
-Its been a while since my last blog. Hopefully, and with some discipline, I will continue to blog in a more constant manner.
 
 This blog is the first part of several (number to be defined) describing the process and steps I took to migrate my blog from Wordpress to CLoudFlare pages, using HUGO and Github.
 
 ## To WordPress or not-to WordPress
 
-Years ago I decided to start blogging, and I did, although mostly in other platforms as a guest and infrequently by myself. That on its own was not a problem, however, whether I blogged or not, mantaining a blog requires a monetary investment. At a minimum, you need a [registered domain](https://wordpress.com/support/domains/domain-pricing-and-available-tlds/?currency=EUR).
+Years ago I decided to start blogging, and I did, although mostly in other platforms as a guest and infrequently by myself. That on its own was not a problem, however, mantaining a blog requires time, effort and, money. Strictly speaking about money: at a minimum, you need a [registered domain](https://wordpress.com/support/domains/domain-pricing-and-available-tlds/?currency=EUR).
 
-In my case, WordPress seemed like the best choice at the time: you could get the domain registered and also the blogging platform. However, if you wish your blog to be "ad-free" (otherwise the site would be drowing with superflous and obnoxious marketing), you also must get ready to [pay a premium](https://wordpress.com/pricing/).
+In my case, WordPress seemed like the best choice at the time (around 2016): you could get the domain registered and also the blogging platform. Ironically, the platform's "ad-free" plan (otherwise the site would be flooded with superflous and obnoxious marketing), was indeed [not free at all](https://wordpress.com/pricing/). 
 
-Logically, paying for something you infrequently use is a piffle. In the meantime, I heard from some friends who moved away from WordPress for the same reasons...
+Given my ocassional blogging, the price tag was not appropiate. Paying for something you infrequently use is, at best, a piffle, especially if there is a better/cheaper/faster opcion at your disposal out there that could fit your situation better.
 
+Over time I kept hearing that some friends were migrating to Hugo, and also were able to deploy static, light (and ad-free!) websites in developer pages (Github/CloudFlare). With certain aprehension (given my minimal skills) but also the convinction of saving some bucks (the renewal date was approaching) and a bit of curiosity to learn something new; it simply felt like the way to go.
+
+If you, like me, want to know where to start (and are less of a coding neophyite than me), this series of blog posts will get you there.
+
+## First things first: What is HUGO?
+
+Hugo is a framework for website building. With a bit of HTML markup, you can build a simple, yet efficient website that will suit your needs.
+
+One of its advantages is its Open-source nature, which naturally builds a community around it that motivates its growth and development.
+
+What do you (minimally) need?
+- A text editor (I started with nano in linux)
+- A bit of Markdown knowledge
+- Getting to know HUGO
+- Patience
+
+Yes, money is not in the list. You could start with a time and effort investment (mostly learning HUGO and understanding the gotchas) and completely for free.
+
+## The Migration Process
+
+# The process I went through can be (roughly) outlined as follow:
+
+1. Export your Wordpress Site
+2. Migrate your domain to CloudFlare (optional)
+3. Convert the exported site to Markdown (I found a wonderful tool written by Bill Boyd)
+4. Install HUGO and run your website locally (I did run it in my RaspBerry Pi for a while)
+5. Create a repository in Github
+6. Push your local website structure into the repository (VSCode simplifies things)
+7. Create a CloudFlare account
+8. Create a developer documentation page through a Worker
+9. Link the developer page to your GitHub repository
+10. Define environmental variables and deploy
+11. Create DNS records to redirect your documentation website to your original domain (xyz.dev -> xyz.com) - (optional)
+12. Keep on upskilling
+
+It might look like an behemothic list at first, but it goes by quickly as you progress through it. In my particular case, what took time was to find out what the next step was (and a lot of trial and error) and understanding HUGO. Do keep in mind that CloudFlare does not have to be your provider of choice, some people use [GitHub](https://pages.github.com/) or [Netlify](netlify.com)
+
+# If you dont have a WordPress website/domain, then your process could look like this:
+
+0. Get a domain from CloudFlare (Potato.com) - (optional)
+1. Install HUGO and run your website locally (I did run it in my RaspBerry Pi for a while)
+2. Create a repository in Github
+3. Push your local website structure into the repository (VSCode simplifies things)
+4. Create a CloudFlare account
+5. Create a developer documentation page through a Worker
+6. Link the developer page to your GitHub repository
+7. Define environmental variables and deploy
+8. Create DNS records to redirect your documentation website to your original domain (xyz.dev -> xyz.com) - (optional)
+9. Keep on upskilling
+
+Step #0 can be executed at any point in time or it might even be skipped, as you dont necessarily require a custom domain (potato.com). You could start with pages.dev (CloudFlare) or github.io (Github) for your website, without problems.
+
+## Good, Cheap, Fast - pick two
+
+We all heard about this old and painfully accurate adage, and in this particular case it is not different. CloudFlare [charges you nothing](https://pages.cloudflare.com/) to host a documentation website (pages.dev), and running that kind of domain means also that you do not need a custom one.
+
+Your deployment can be good and cheap at the beginning, and the swiftness of it completely depends on you. In other words: if you get familiar with Hugo quickly, you can (finally) get all the elements in the sacred good/cheap/fast list.
+
+If you wish to have a custom domain (e.g. xyz.com) there is a yearly payment to register the domain with CloudFlare. In my case, it was ~11 Euro/year. Equating to 2-3 coffees, depending on where you live.
+
+**Bonus**: if you run a pages.dev website (called developer platform), you get access to the free tier/tools they offer as a CDN/Hosting platform.
 
 Among Cisco SD-WAN's tools to steer or influence traffic across the overlay, the data policies are the ones providing the highest flexibility. For a primer about SD-WAN Data Policies, please refer to this article: [Cisco SD-WAN Data Policies](https://recurseit.com/post/2021/01/2021-01-27-cisco-sd-wan-data-policies/).
 
 One of the SD-WAN Data Policy applications is the Service Side NAT. Compared to traditional networking where NAT deployment is rather straightforward, Service Side NAT in SD-WAN is a corner case whose deployment logic can initially be elusive. This document will describe the SD-WAN Service Side NAT principles and deployment as a practical case study.
 
-## Technical Debt
+## Closing
 
-Among several terms and well known characteristics, technical debt is an often ignored condition that stays under the rug until it becomes unmanageable and causes an outage (that's when management's alarms go up). Brownfield scenarios where infrastructure evolved over time commonly come with an accrued technical debt. This debt can manifest itself in several ways, some of which are:
+This blog was aimed to cover the process at a high level. The next one(s) will cover the steps and their respective gotchas, so you can also deploy your own website and feel the accomplishment of doing so. If you are adventurous and curious enough (wink wink), you already can start and get there after some Bumps, knocks and bruises. Whether you wait for the next blog or start right now: I wish you the best of the successes.
 
-- Unused configuration
-    - Old firewall rules nobody would remove due to risk
-    - Unused VLANs from decommissioned servers/user ranges
-    - Leftovers from previous implementations like ACLs and route maps
-- Complex deployments
-    - Several routing protocols performing redistribution
-    - IP range migration or redeployment
-    - Convoluted routing policies
-    - Vendor specific features
-- Customized deployments
-    - Specific devices deployed without proper renewal/replacement
-        - EoS and EoL devices
-        - Lack of proper replacement in the industry
-    - Specific type of devices deployed
-        - Whiteboxes/Grayboxes
+Thank you for reading!
 
-While addressing (or living with) technical debt, convoluted solutions are required to solve problems caused by it. One of them is to implement NAT, commonly to avoid re-addressing certain devices in the network (like routers, servers or firewalls).
-
-## NAT'ing the Cisco way
-
-A common scenario can be depicted as follows: A site design covering a specific set of subnets in a clearly defined range, and a device standing out from the rest. Too cumbersome to be fixed, instead, only kept in the network. Furthermore, this device should be monitored by a set of management stations.
-
-A common way to approach this situation is through 1:1 NAT deployed in the routers at the edge.
-
-![](images/service-side-nat-legacy-diagram.png)
-
-Legacy site diagram
-
-For exemplification purposes, the addresses to establish a NAT binding will be the following:
-
-- **Inside IP address:** 10.36.65.242.
-- **Outside IP address:** 10.104.118.14.
-- **Sources:** 192.0.0.0/24 and 192.0.2.0/24.
-
-The way to perform this in the Cisco IOS way is to create a NAT statement and limit its scope through a route-map and Access List combo:
-
-```
-ip nat inside source static 10.36.65.242 10.104.118.14 route-map RM_MANAGEMENT_RANGES <<< scope limiting route-map
-```
-
-What would the ACL and Route Map look like?
-
-```
-route-map RM_MANAGEMENT_RANGES permit 10
- match ip address ACL_MANAGEMENT_RANGES <<<< scope limiting route-map matching an ACL
-!
-ip access-list extended ACL_MANAGEMENT_RANGES <<<< ACL containing allowed sources
- permit ip any 192.0.0.0/24 0.0.0.255 <<<<< sources
- permit ip any 192.0.2.0/24 0.0.0.255 <<<<< sources
-```
-
-Lastly, inside and outside interfaces must be identified:
-
-```
-interface GigabitEthernet0/0/0.17 <<< WAN Interface
- ip nat outside
-!
-interface GigabitEthernet0/0/1.920 <<< LAN Interface
- ip nat inside
-```
-
-Reiterating: The configurations above were meant to **only** create a NAT binding between inside and outside IP addresses if the source of the traffic are the management subnets. What occurs when this site and its particular setup must be migrated to SD-WAN?
-
-## Cisco SD-WAN Service Side NAT
-
-An equivalent of the configuration above in the SD-WAN world would require paying attention to the following caveat: SD-WAN is a fantastic tool to distribute modular, repeatable and standardized configuration in a network-wide manner. In other words, it doesn't look at devices as special/particular units, it looks at them as sites. **A site (one or two routers) is the minimal entity to which you can apply a policy from a centralized point of view (vSmart).** Conversely, it means that highly customized configurations in particular devices tend to be weaker areas, requiring more work and considerations (often called gymnastics).
-
-![](images/service-side-nat-sdwan-diagram.png)
-
-SD-WAN site diagram
-
-Note the illustration above. Unnecessary information has been removed to focus on the only important elements from the SD-WAN perspective: IP addresses, directions of the flows, and VPNs.
-
-The equivalent configuration/policy in SD-WAN for the 1:1 NAT Cisco lingo mentioned earlier includes the following elements (note that inbound direction applies to the vEdge's perspective) to cater for both directions of the NAT'ed flows:
-
-- Clarity about service and transport sides of the equation.
-- A site list containing **only** the site in question.
-- A VPN list.
-- A natpool interface with the IP address to use as outside address (10.104.118.14)  to handle **inbound WAN traffic (transport to service direction)**.
-    - A specific NAT statement to create the binding (under the natpool inteface's configuration) between the inside and outside IP addresses.
-- A customized data policy to steer **inbound LAN traffic (service to transport direction)**.
-
-### **NAT Pool interface configuration**
-
-**vEdge-config**
-
-```
-configure terminal
- vpn 1
-  interface natpool1
-   ip address 10.104.118.14/32 <<<< IP range to be used for outside IP addresses
-   nat
-    static source-ip 10.36.65.242 translate-ip 10.104.118.14 inside <<<< 1:1 mapping
-    no overload
-  !
-   no shutdown
-```
-
-Caveats to consider in the configuration above:
-
-- The natpool interface must sit in the service VPN you are NAT'ing the traffic from.
-- The number of natpool interfaces is a range between 1 and 32 (natpool1 - natpool32).
-- The natpool interface must match with the mappings configured in the NAT statement.
-- There can be several NAT statements, as long as the number matches the number of IP addresses contained in the natpool range (I.e. /30 would allow 4 IP addresses to be used in the pool).
-- **inside** keyword—Translate the source IP address of packets that are coming from the service side of the vEdge router and that are destined to transport side of the router. This is the default.
-- **outside** keyword —Translate the source IP address of packets that are coming to the vEdge router from the transport side of the vEdge router and that are destined to a service-side device.
-- **overload** keyword — By default, dynamic NAT is enabled — "no overload" must be specified for 1:1 NAT.
-
-### Data Policy
-
-The Data Policy will be required because the natpool interface is **not** the inbound LAN interface, it is a virtual entity created for NAT'ing purposes (NAT on a stick). Without the data policy, the **inbound LAN traffic** would only traverse the LAN interface, therefore failing to NAT in the outbound direction (towards WAN/transport).
-
-The Data Policy will effectively steer the interesting/matching traffic into the natpool interface for the required destinations (management stations).
-
-#### Data Policy - CLI format
-
-```
-from-vsmart data-policy _VL_VPN1_HQ_EMEA
- direction from-service <<< matching traffic coming from VPN 1 - service VPN
- vpn-list VL_VPN1 <<< VPN list
-  sequence 1 <<< sequences matching source (firewall's inside IP address) and destinations of the traffic
-   match
-    source-ip      10.36.65.242/32
-    destination-ip 192.0.0.0/24
-   action accept
-    nat pool 1 <<< Steering traffic towards natpool interface if matched
-    log <<< optional
-  sequence 11 <<< sequences matching source (firewall's inside IP address) and destinations of the traffic
-   match
-    source-ip      10.36.65.242/32
-    destination-ip 192.0.2.0/24
-   action accept
-    nat pool 1 <<< Steering traffic towards natpool interface if matched 
-    log <<< optional
-  default-action accept <<<< The default action is "reject"
-```
-
-**NAT - Data Policy - CLI**
-
-Caveats to consider in the configuration above:
-
-- It is a highly customized and complex configuration - all the elements have to be created from scratch, and it has to be applied on two different places. On the vEdge(s) for inbound traffic, and the vSmart controllers for outbound traffic (towards WAN).
-- When compared with Cisco's configuration, it is different and confusing for many, in orders of magnitude. Especially because it does not get applied only on one device.
-- The default action has to be changed explicitly to "accept".
-- If the Data Policy is not applied, traffic would get NAT'ed in one direction only.
-- This scenario is a corner case.
-- The documentation is unclear, scattered, scarce, or confusing - that was the main motivation of this article.
-
-#### CLI Policy - vManage
-
-![](images/Policy-1.png)
-
-Data Policy configuration
-
-![](images/Policy-2.png)
-
-Modifying default action of the Data Policy
-
-![](images/Policy-3.png)
-
-Applying Data Policy
-
-Hope it helps!
-
-References containing information about Service Side NAT:
-
-- [https://www.cisco.com/c/en/us/td/docs/routers/sdwan/configuration/policies/vedge/policies-book/vEdge-as-NAT-device.html](https://www.cisco.com/c/en/us/td/docs/routers/sdwan/configuration/policies/vedge/policies-book/vEdge-as-NAT-device.htmlhttps://www.cisco.com/c/dam/en/us/td/docs/routers/sdwan/configuration/config-18-4.pdf#page=505https://sdwan-docs.cisco.com/Product_Documentation/Software_Features/SD-WAN_Release_16.3/07Policy_Applications/04Using_a_vEdge_Router_as_a_NAT_Device/Service-Side_NAT_Configuration_Examplehttps://www.cisco.com/c/en/us/support/docs/routers/sd-wan/215106-service-side-destination-based-network-a.htmlhttps://sdwan-docs.cisco.com/Product_Documentation/vManage_Help/Release_18.3/Configuration/Templates/VPN_Interface_NAT_Poolhttps://www.cisco.com/c/en/us/td/docs/routers/sdwan/configuration/system-interface/ios-xe-17/systems-interfaces-book-xe-sdwan/service-side-nat-ios-xe.html)
-- [https://www.cisco.com/c/dam/en/us/td/docs/routers/sdwan/configuration/config-18-4.pdf#page=505](https://www.cisco.com/c/en/us/td/docs/routers/sdwan/configuration/policies/vedge/policies-book/vEdge-as-NAT-device.htmlhttps://www.cisco.com/c/dam/en/us/td/docs/routers/sdwan/configuration/config-18-4.pdf#page=505https://sdwan-docs.cisco.com/Product_Documentation/Software_Features/SD-WAN_Release_16.3/07Policy_Applications/04Using_a_vEdge_Router_as_a_NAT_Device/Service-Side_NAT_Configuration_Examplehttps://www.cisco.com/c/en/us/support/docs/routers/sd-wan/215106-service-side-destination-based-network-a.htmlhttps://sdwan-docs.cisco.com/Product_Documentation/vManage_Help/Release_18.3/Configuration/Templates/VPN_Interface_NAT_Poolhttps://www.cisco.com/c/en/us/td/docs/routers/sdwan/configuration/system-interface/ios-xe-17/systems-interfaces-book-xe-sdwan/service-side-nat-ios-xe.html)
-- [https://sdwan-docs.cisco.com/Product\_Documentation/Software\_Features/SD-WAN\_Release\_16.3/07Policy\_Applications/04Using\_a\_vEdge\_Router\_as\_a\_NAT\_Device/Service-Side\_NAT\_Configuration\_Example](https://www.cisco.com/c/en/us/td/docs/routers/sdwan/configuration/policies/vedge/policies-book/vEdge-as-NAT-device.htmlhttps://www.cisco.com/c/dam/en/us/td/docs/routers/sdwan/configuration/config-18-4.pdf#page=505https://sdwan-docs.cisco.com/Product_Documentation/Software_Features/SD-WAN_Release_16.3/07Policy_Applications/04Using_a_vEdge_Router_as_a_NAT_Device/Service-Side_NAT_Configuration_Examplehttps://www.cisco.com/c/en/us/support/docs/routers/sd-wan/215106-service-side-destination-based-network-a.htmlhttps://sdwan-docs.cisco.com/Product_Documentation/vManage_Help/Release_18.3/Configuration/Templates/VPN_Interface_NAT_Poolhttps://www.cisco.com/c/en/us/td/docs/routers/sdwan/configuration/system-interface/ios-xe-17/systems-interfaces-book-xe-sdwan/service-side-nat-ios-xe.html)
-- [https://www.cisco.com/c/en/us/support/docs/routers/sd-wan/215106-service-side-destination-based-network-a.html](https://www.cisco.com/c/en/us/td/docs/routers/sdwan/configuration/policies/vedge/policies-book/vEdge-as-NAT-device.htmlhttps://www.cisco.com/c/dam/en/us/td/docs/routers/sdwan/configuration/config-18-4.pdf#page=505https://sdwan-docs.cisco.com/Product_Documentation/Software_Features/SD-WAN_Release_16.3/07Policy_Applications/04Using_a_vEdge_Router_as_a_NAT_Device/Service-Side_NAT_Configuration_Examplehttps://www.cisco.com/c/en/us/support/docs/routers/sd-wan/215106-service-side-destination-based-network-a.htmlhttps://sdwan-docs.cisco.com/Product_Documentation/vManage_Help/Release_18.3/Configuration/Templates/VPN_Interface_NAT_Poolhttps://www.cisco.com/c/en/us/td/docs/routers/sdwan/configuration/system-interface/ios-xe-17/systems-interfaces-book-xe-sdwan/service-side-nat-ios-xe.html)
-- [https://sdwan-docs.cisco.com/Product\_Documentation/vManage\_Help/Release\_18.3/Configuration/Templates/VPN\_Interface\_NAT\_Pool](https://www.cisco.com/c/en/us/td/docs/routers/sdwan/configuration/policies/vedge/policies-book/vEdge-as-NAT-device.htmlhttps://www.cisco.com/c/dam/en/us/td/docs/routers/sdwan/configuration/config-18-4.pdf#page=505https://sdwan-docs.cisco.com/Product_Documentation/Software_Features/SD-WAN_Release_16.3/07Policy_Applications/04Using_a_vEdge_Router_as_a_NAT_Device/Service-Side_NAT_Configuration_Examplehttps://www.cisco.com/c/en/us/support/docs/routers/sd-wan/215106-service-side-destination-based-network-a.htmlhttps://sdwan-docs.cisco.com/Product_Documentation/vManage_Help/Release_18.3/Configuration/Templates/VPN_Interface_NAT_Poolhttps://www.cisco.com/c/en/us/td/docs/routers/sdwan/configuration/system-interface/ios-xe-17/systems-interfaces-book-xe-sdwan/service-side-nat-ios-xe.html)
-- [https://www.cisco.com/c/en/us/td/docs/routers/sdwan/configuration/system-interface/ios-xe-17/systems-interfaces-book-xe-sdwan/service-side-nat-ios-xe.html](https://www.cisco.com/c/en/us/td/docs/routers/sdwan/configuration/policies/vedge/policies-book/vEdge-as-NAT-device.htmlhttps://www.cisco.com/c/dam/en/us/td/docs/routers/sdwan/configuration/config-18-4.pdf#page=505https://sdwan-docs.cisco.com/Product_Documentation/Software_Features/SD-WAN_Release_16.3/07Policy_Applications/04Using_a_vEdge_Router_as_a_NAT_Device/Service-Side_NAT_Configuration_Examplehttps://www.cisco.com/c/en/us/support/docs/routers/sd-wan/215106-service-side-destination-based-network-a.htmlhttps://sdwan-docs.cisco.com/Product_Documentation/vManage_Help/Release_18.3/Configuration/Templates/VPN_Interface_NAT_Poolhttps://www.cisco.com/c/en/us/td/docs/routers/sdwan/configuration/system-interface/ios-xe-17/systems-interfaces-book-xe-sdwan/service-side-nat-ios-xe.html)
+# References and further reading:
+- [Export your WordPress site](https://wordpress.com/support/export/)
+- [Markdown Reference Guide](https://www.markdownguide.org/)
+- [HUGO](https://gohugo.io/)
+- [WordPress export to Markdown](https://github.com/lonekorean/wordpress-export-to-markdown)
