@@ -50,7 +50,7 @@ Yes, money is not in the list. You could start with a time and effort investment
 ### The process I went through can be (roughly) outlined as follow:
 
 1. Export your Wordpress Site
-2. Migrate your domain to CloudFlare (optional)
+2. Migrate your domain to CloudFlare (Potato.com) - (optional)
 3. Convert the exported site to Markdown (I found a wonderful tool written by Bill Boyd)
 4. Install HUGO and run your website locally (I did run it in my RaspBerry Pi for a while)
 5. Create a repository in Github
@@ -59,7 +59,7 @@ Yes, money is not in the list. You could start with a time and effort investment
 8. Create a developer documentation page through a Worker
 9. Link the developer page to your GitHub repository
 10. Define environmental variables and deploy
-11. Create DNS records to redirect your documentation website to your original domain (xyz.dev -> xyz.com) - (optional)
+11. Create DNS records to redirect your documentation website to your original domain (xyz.pages.dev -> xyz.com) - (optional)
 12. Keep on upskilling
 
 It might look like an behemothic list at first, but it goes by quickly as you progress through it. In my particular case, what took time was to find out what the next step was (and a lot of trial and error) and understanding HUGO. Do keep in mind that CloudFlare does not have to be your provider of choice, some people use [GitHub](https://pages.github.com/) or [Netlify](netlify.com)
