@@ -17,7 +17,7 @@ tags:
   - "repository"
 ---
 
-This blog is the first part of several (number to be defined) describing the process and steps I took to migrate my blog from Wordpress to CLoudFlare pages, using HUGO and Github.
+This blog is the first part of several (number to be defined) describing the process and steps I took to migrate my blog from Wordpress to CloudFlare pages, using HUGO and Github.
 
 ## To WordPress, or not to WordPress
 
@@ -51,7 +51,7 @@ Yes, money is not in the list. You could start with a time and effort investment
 
 1. Export your Wordpress Site
 2. Migrate your domain to CloudFlare (Potato.com) - (optional)
-3. Convert the exported site to Markdown (I found a wonderful tool written by Bill Boyd)
+3. Convert the exported site to Markdown (I found a wonderful tool written by [Bill Boyd](https://www.linkedin.com/in/willboyd/))
 4. Install HUGO and run your website locally (I did run it in my RaspBerry Pi for a while)
 5. Create a repository in Github
 6. Push your local website structure into the repository (VSCode simplifies things)
