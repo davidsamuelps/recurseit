@@ -1,6 +1,6 @@
 ---
 title: "Migrating from WordPress to HUGO - Part 2"
-date: "2025-03-14"
+date: "2025-03-21"
 draft: true
 #categories: 
 #  - "ccnp"
@@ -8,50 +8,18 @@ tags:
   - "hugo"
   - "wordpress"
   - "cloudflare"
-  - "developer"
-  - "html"
+  - "DNS"
+  - "domain"
   - "markdown"
-  - "git"
-  - "github"
-  - "code"
-  - "repository"
 ---
 
-This blog is the first part of several (number to be defined) describing the process and steps I took to migrate my blog from Wordpress to CLoudFlare pages, using HUGO and Github.
+In the [previous blog](https://recurseit.com/post/2025/03/migrating-from-wordpress-to-hugo---part-1/) we spoke about the migration process at a high level, and a set of steps was mentioned. Let us bring those steps back in the section below:
 
-## To WordPress, or not to WordPress
+## The process I went through can be (roughly) outlined as follow:
 
-Years ago I decided to start blogging, and I did, although mostly in other platforms as a guest and infrequently by myself. That on its own was not a problem, however, mantaining a blog requires time, effort and, money. Strictly speaking about money: at a minimum, you need a [registered domain](https://wordpress.com/support/domains/domain-pricing-and-available-tlds/?currency=EUR).
-
-In my case, WordPress seemed like the best choice at the time (around 2016): you could get the domain registered and also the blogging platform. Ironically, the platform's "ad-free" plan (otherwise the site would be flooded with superflous and obnoxious marketing), was indeed [not free at all](https://wordpress.com/pricing/). 
-
-Given my ocassional blogging, the price tag was not appropiate. Paying for something you infrequently use is, at best, a piffle, especially if there is a better/cheaper/faster opcion at your disposal out there that could fit your situation better.
-
-Over time I kept hearing that some friends were migrating to Hugo, and also were able to deploy static, light (and ad-free!) websites in developer pages (Github/CloudFlare). With certain aprehension (given my minimal skills) but also the convinction of saving some bucks (the renewal date was approaching) and a bit of curiosity to learn something new; it simply felt like the way to go.
-
-If you, like me, want to know where to start (and are less of a coding neophyite than me), this series of blog posts will get you there.
-
-## First things first: What is HUGO?
-
-Hugo is a framework for website building. With a bit of HTML markup, you can build a simple, yet efficient website that will suit your needs.
-
-One of its advantages is its Open-source nature, which naturally builds a community around it that motivates its growth and development.
-
-What do you (minimally) need?
-- A text editor (I started with nano in linux)
-- A bit of Markdown knowledge
-- Getting to know HUGO
-- Patience
-
-Yes, money is not in the list. You could start with a time and effort investment (mostly learning HUGO and understanding the gotchas) and completely for free.
-
-## The Migration Process
-
-### The process I went through can be (roughly) outlined as follow:
-
-1. Export your Wordpress Site
-2. Migrate your domain to CloudFlare (Potato.com) - (optional)
-3. Convert the exported site to Markdown (I found a wonderful tool written by Bill Boyd)
+1. **Export your Wordpress Site**
+2. [**Migrate your domain to CloudFlare**](https://wordpress.com/support/domains/transfer-domain-registration/) **(Potato.com) - (optional)**
+3. Convert the exported site to Markdown (I found a wonderful tool written by [Bill Boyd](https://www.linkedin.com/in/willboyd/))
 4. Install HUGO and run your website locally (I did run it in my RaspBerry Pi for a while)
 5. Create a repository in Github
 6. Push your local website structure into the repository (VSCode simplifies things)
@@ -62,41 +30,76 @@ Yes, money is not in the list. You could start with a time and effort investment
 11. Create DNS records to redirect your documentation website to your original domain (xyz.pages.dev -> xyz.com) - (optional)
 12. Keep on upskilling
 
-It might look like an behemothic list at first, but it goes by quickly as you progress through it. In my particular case, what took time was to find out what the next step was (and a lot of trial and error) and understanding HUGO. Do keep in mind that CloudFlare does not have to be your provider of choice, some people use [GitHub](https://pages.github.com/) or [Netlify](netlify.com)
+Although it might look unwieldy at first, it goes by rather quickly. If you do not have a WordPress domain/site at the moment, feel free to ignore steps 1-3. Given its lenght, **I will cover steps 1-2 in this post, and the rest will be covered in the following ones.**
 
-### If you dont have a WordPress website/domain, then your process could look like this:
+### 1. Exporting your Wordpress Site
 
-0. Get a domain from CloudFlare (Potato.com) - (optional)
-1. Install HUGO and run your website locally (I did run it in my RaspBerry Pi for a while)
-2. Create a repository in Github
-3. Push your local website structure into the repository (VSCode simplifies things)
-4. Create a CloudFlare account
-5. Create a developer documentation page through a Worker
-6. Link the developer page to your GitHub repository
-7. Define environmental variables and deploy
-8. Create DNS records to redirect your documentation website to your original domain (xyz.dev -> xyz.com) - (optional)
-9. Keep on upskilling
+As this step could be performed quickly and intuitively, and to avoid reinventing the wheel, please [follow the steps described by WordPress.](https://wordpress.com/support/export/)
 
-Step #0 can be executed at any point in time or it might even be skipped, as you dont necessarily require a custom domain (potato.com). You could start with pages.dev (CloudFlare) or github.io (Github) for your website, without problems.
+### 2. Migrating your Wordpress domain to CloudFlare (please read the note at the end of this step)
 
-## Good, Cheap, Fast - pick two
+This step could be confusing, given the number of processes, clicks, requests and corresponding data. Although WordPress and CloudFlare provide some instructions, they sometimes are not too detailed and could be elusive. The following lines are an attempt to guide you through it.
 
-We all heard about this old and painfully accurate adage, and in this particular case it is not different. CloudFlare [charges you nothing](https://pages.cloudflare.com/) to host a documentation website (pages.dev), and running that kind of domain means also that you do not need a custom one.
+Wordpress allows you to migrate your domain (recurseit.com - in my case) to another registrar. In order to do that you must create an account with your registrar of choice. In my case, it was CloudFlare. After creating the account, you must coordinate the transfer using both of their platforms. As the transfer takes time (4-7 days) you will carry on with the process asynchronously. 
 
-Your deployment can be good and cheap at the beginning, and the swiftness of it completely depends on you. In other words: if you get familiar with Hugo quickly, you can (finally) get all the elements in the sacred good/cheap/fast list.
+To create an account in CloudFlare, follow this [link](https://www.cloudflare.com/plans/developer-platform/) and pick the "Workers Free" plan and then fill the information required to sign up:
 
-If you wish to have a custom domain (e.g. xyz.com) there is a yearly payment to register the domain with CloudFlare. In my case, it was ~11 Euro/year. Equating to 2-3 coffees, depending on where you live.
+![](images/CF1.png)
 
-**Bonus**: if you run a pages.dev website (called developer platform), you get access to the free tier/tools they offer as a CDN/Hosting platform.
+#### Before migrating your domain, you should use CloudFlare as your DNS server for your domain and website. The process to change them can be described as follows:
 
-## Closing
+1. In the Cloudflare dashboard, click on “Add” (upper right corner) and then on "Existing Domain".
+2. Introduce your domain and click the "Continue" button to scan your DNS records.
 
-This blog was aimed to cover the process at a high level. The next one(s) will cover the steps and their respective gotchas, so you can also deploy your own website and feel the accomplishment of doing so. If you are adventurous and curious enough (wink wink), you already can start and get there after some Bumps, knocks and bruises. Whether you wait for the next blog or start right now: I wish you the best of the successes.
+![](images/CF3.png)
+
+3. After the scan finishes (I had to use "potato.com" to show you the scan results in a capture - my domain is already at CloudFlare and it won't run the DNS scan), a list of records will be displayed (it will probably prompt you to choose a plan, select the "Free" one at the bottom). Cloudflare will show you a list of the DNS records it found.
+
+![](images/CF4.png)
+
+4. After you click the "Continue to activation" button, you will be shown a screen providing you with two (2) DNS servers to use and indicating they must be configured on your current provider's side:
+
+![](images/CF5.png)
+
+5. Click "Continue" and you will be sent to the "Last Step" section
+
+![](images/CF6.png)
+
+6. Head to WordPress and check your current settings. Look for the "Upgrades" menu and click "Domains in Wordpress" under it.
+7. Head to the "Name Servers" section. Click to disable the “Use WordPress.com name servers” button.
+8. On CloudFlare, copy the DNS servers and return to WordPress to paste them into the text boxes provided and click “Save custom name servers” button in WordPress.
+9. Back in Cloudflare, click “Check nameservers” button at the bottom of the "Last Step" page. The change will take a while, be patient. If you are lucky, it could take only some mins. Go for lunch or take a walk in the meantime.
+10. You should receive an email from CloudFlare after some time confirming your change of status to "active" and that the DNS server change was successful.
+
+#### Now that you have an account in both platforms, and have changed your DNS servers, the transfer process can begin:
+
+1. In WordPress look for the "Transfer Domain" option, under "Domain Registration" (my apologies, I do not have a capture of this section).
+2. Make sure the "Transfer lock" feature is off.
+3. After a while (give it 15 mins) your domain should be visible in CloudFlare for transfer. Look for the "Domain Registration" section and click the "Transfer Domains" button:
+
+![](images/CF2.png)
+
+4. Select and confirm the domain you want to transfer.
+5. In WordPress, you will be shown an option to get an authorization code. It takes around 15 mins for the email to arrive.
+6. Back in CloudFlare, you will be asked to provide the code you received from WordPress to transfer the domain.
+7. You should received an email from CloudFlare confirming that the transfer has been requested.
+8. Some hours later you should receive an email from WordPress notifying you of the same transfer request. It will contain a link to the "Transfer Management" page.
+9. Click the "Accept Transfer" button in WordPress
+10. After a while you should receive an email from CloudFlare confirming that the transfer has been completed successfully.
+
+#### After doing this, your WordPress website (not your domain) will not be hosted in WordPress, so you have to point back your website at your domain.
+
+1. In WordPress look for the "Upgrades" menu, and under it "Domains in WordPress".
+2. Click "Add new domain" and then "Use a domain I own"
+3. Type the domain name and hit the "Continue" button
+4. Lastly, click the "Select" option under "Connect you domain"
+
+*NOTE*: You could leave this step till the very end, after you feel more comfortable with HUGO (as you can run that locally and preview it) and want to fully migrate without looking back.
 
 Thank you for reading!
 
 # References and further reading:
-- [Export your WordPress site](https://wordpress.com/support/export/)
-- [Markdown Reference Guide](https://www.markdownguide.org/)
-- [HUGO](https://gohugo.io/)
-- [WordPress export to Markdown](https://github.com/lonekorean/wordpress-export-to-markdown)
+- [Transfer a Domain to Another Registrar](https://wordpress.com/support/domains/transfer-domain-registration/)
+- [Change a Domain’s Name Servers](https://wordpress.com/support/domains/change-name-servers/#changing-name-servers-to-point-away-from-word-press-com)
+- [Transfer your domain to Cloudflare](https://developers.cloudflare.com/registrar/get-started/transfer-domain-to-cloudflare/)
+- [DNS Checker](https://dnschecker.org/)

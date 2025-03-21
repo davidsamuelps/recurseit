@@ -47,7 +47,7 @@ Yes, money is not in the list. You could start with a time and effort investment
 
 ## The Migration Process
 
-### The process I went through can be (roughly) outlined as follow:
+### The process I went through can be (roughly) outlined as follows:
 
 1. Export your Wordpress Site
 2. Migrate your domain to CloudFlare (Potato.com) - (optional)
