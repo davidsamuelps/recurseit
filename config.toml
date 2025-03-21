@@ -14,9 +14,6 @@ theme = ["m10c-27-02-2024"]
 [pagination]
   pagerSize = 8
 
-[blackfriday]
- extensions= ["noEmptyLineBeforeBlock"]
-
 [menu]
   [[menu.main]]
     identifier = "home"

@@ -41,6 +41,8 @@ tags:
   - "standard"
   - "wildcard"
 coverImage: "recurseit3.jpg"
+[blackfriday]
+extensions = [“noEmptyLineBeforeBloc”]
 ---
 
 Heeello everyone! Again, sorry for the late post, I am trying to do them more often (_sometimes it's quite challenging)_. GRE Saga is on hold, i am looking for actors and proper scenes to make the history interesting. So, castings are taking place! If you have suggestions about a new topic or whatever you think can help the blog, click **[here](https://www.linkedin.com/in/davidsamuelps/)** and send me a message! :D
@@ -90,13 +92,15 @@ You have two ways to configure them:
 
 Syntax is this one:
 
-```Router(config)#access-list ACL_Identifier_number permit|deny IP_Address|host|any [log]
+```
+Router(config)#access-list ACL_Identifier_number permit|deny IP_Address|host|any [log]
 ```
 
 
 And, **named mode** (you need to enter first in the ACL configuration mode):
 
-```Router(config)#ip access-list extended ACL_name_number
+```
+Router(config)#ip access-list extended ACL_name_number
 Router(config-ext-acl)# permit|deny IP_protocol source_IP_address wildcard_mask [protocol_information] destination_IP_address wildcard_mask [protocol_information] [log]
 ```
 
