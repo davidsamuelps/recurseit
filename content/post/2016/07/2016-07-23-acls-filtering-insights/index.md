@@ -41,8 +41,8 @@ tags:
   - "standard"
   - "wildcard"
 coverImage: "recurseit3.jpg"
-blackfriday:
-  extensions = [“noEmptyLineBeforeBlock”]
+#blackfriday:
+#  extensions = [“noEmptyLineBeforeBlock”]
 ---
 
 Heeello everyone! Again, sorry for the late post, I am trying to do them more often (_sometimes it's quite challenging)_. GRE Saga is on hold, i am looking for actors and proper scenes to make the history interesting. So, castings are taking place! If you have suggestions about a new topic or whatever you think can help the blog, click **[here](https://www.linkedin.com/in/davidsamuelps/)** and send me a message! :D
