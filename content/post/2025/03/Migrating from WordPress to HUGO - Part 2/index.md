@@ -94,7 +94,7 @@ To create an account in CloudFlare, follow this [link](https://www.cloudflare.co
 3. Type the domain name and hit the "Continue" button
 4. Lastly, click the "Select" option under "Connect you domain"
 
-*NOTE*: You could leave this step till the very end, after you feel more comfortable with HUGO (as you can run that locally and preview it) and want to fully migrate without looking back.
+**NOTE**: You could leave this step till the very end, after you feel more comfortable with HUGO (as you can run that locally and preview it) and want to fully migrate without looking back.
 
 Thank you for reading!
 
