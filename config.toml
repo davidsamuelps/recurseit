@@ -5,6 +5,10 @@ title = "RecurseIT"
 #THEME#
 #theme = ["m10c"]
 #theme = ["m10c-27-02-2024"]
+<<<<<<< HEAD
+=======
+theme = ["npqhugo"]
+>>>>>>> fb362a4ddb545f250ed84a093e6cb9834ef30079
 
 #THEME MODULE#
 #[module]
