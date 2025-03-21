@@ -4,7 +4,7 @@ title = "RecurseIT"
 
 #THEME#
 #theme = ["m10c"]
-theme = ["m10c-27-02-2024"]
+#theme = ["m10c-27-02-2024"]
 
 #THEME MODULE#
 #[module]
@@ -16,7 +16,7 @@ theme = ["m10c-27-02-2024"]
   pagerSize = 8
 
 [blackfriday]
-  noEmptyLineBeforeBlock = true
+ extensions= ["noEmptyLineBeforeBlock"]
 
 [menu]
   [[menu.main]]
@@ -50,20 +50,20 @@ theme = ["m10c-27-02-2024"]
     url = "https://x.com/davidsamuelps"
 
 # Default theme
-#[params.style]
-#  darkestColor = "#242930"
-#  darkColor = "#353b43"
-#  lightColor = "#afbac4"
-#  lightestColor = "#ffffff"
-#  primaryColor = "#57cc8a"
-
-# Green theme
 [params.style]
-  darkestColor = "#315659"
-  darkColor = "#253031"
-  lightColor = "#96a879"
-  lightestColor = "#fff"
-  primaryColor = "#dad865"
+  darkestColor = "#242930"
+  darkColor = "#353b43"
+  lightColor = "#afbac4"
+  lightestColor = "#ffffff"
+  primaryColor = "#57cc8a"
+
+# Yellow/green theme
+#[params.style]
+#  darkestColor = "#315659"
+#  darkColor = "#253031"
+#  lightColor = "#96a879"
+#  lightestColor = "#fff"
+#  primaryColor = "#dad865"
 
 # Red theme
 #[params.style]
