@@ -93,6 +93,7 @@ Syntax is this one:
 ```Router(config)#access-list ACL_Identifier_number permit|deny IP_Address|host|any [log]
 ```
 
+
 And, **named mode** (you need to enter first in the ACL configuration mode):
 
 ```Router(config)#ip access-list extended ACL_name_number
@@ -207,8 +208,7 @@ But, with named mode ACLs you can! :D
 
 Lets make it again in named mode.
 
-```
-R2(config)#ip access-list extended POTATO
+```R2(config)#ip access-list extended POTATO
  R2(config-ext-nacl)#?    <----- See that now we are in a different mode! :o
  Ext Access List configuration commands:
   <1-2147483647> Sequence Number  <---- You can specify the sequence number!
@@ -239,7 +239,7 @@ R2(config-ext-nacl)#do sh ip acces
 
 How to add something before the ACE with sequence number 20?
 ```
-> R2(config-ext-nacl)#**15** deny icmp 10.10.1.1 0.0.0.255 10.10.2.1 0.0.0.255
+R2(config-ext-nacl)#**15** deny icmp 10.10.1.1 0.0.0.255 10.10.2.1 0.0.0.255
 ```
 And, now, show again! :D
 ```
