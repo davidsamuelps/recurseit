@@ -11,6 +11,9 @@ theme = ["m10c-27-02-2024"]
 #    path = "github.com/joeroe/risotto"
 #    disable = false
 
+#[blackfriday]
+#  extensions = [“noEmptyLineBeforeBloc”]
+
 [pagination]
   pagerSize = 8
 
