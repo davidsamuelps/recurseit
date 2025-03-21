@@ -8,11 +8,11 @@ theme = ["m10c-27-02-2024"]
 #BLACKFRIDAY MODULE#
 [module]
   [[module.imports]]
-    path = "import "github.com/russross/blackfriday"
+    path = "github.com/russross/blackfriday"
     disable = false
 
 [pagination]
-  pagerSize = 10
+  pagerSize = 8
 
 [menu]
   [[menu.main]]
