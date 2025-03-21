@@ -1,7 +1,7 @@
 ---
 title: "Migrating from WordPress to HUGO - Part 2"
 date: "2025-03-21"
-draft: true
+#draft: true
 #categories: 
 #  - "ccnp"
 tags: 
