@@ -5,11 +5,11 @@ title = "RecurseIT"
 #THEME#
 theme = ["m10c-27-02-2024"]
 
-#THEME MODULE#
-#[module]
-#  [[module.imports]]
-#    path = "github.com/joeroe/risotto"
-#    disable = false
+#BLACKFRIDAY MODULE#
+[module]
+  [[module.imports]]
+    path = "import "github.com/russross/blackfriday"
+    disable = false
 
 [pagination]
   pagerSize = 10
