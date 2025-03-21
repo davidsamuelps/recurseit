@@ -41,7 +41,7 @@ tags:
   - "standard"
   - "wildcard"
 coverImage: "recurseit3.jpg"
-[blackfriday]
+blackfriday:
   extensions = [“noEmptyLineBeforeBloc”]
 ---
 
