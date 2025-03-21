@@ -3,7 +3,7 @@ title: "Test/Draft"
 date: 2024-07-06T23:10:36+02:00
 draft: true
 blackfriday:
-  extensions = [“noEmptyLineBeforeBloc”]
+  extensions = [“noEmptyLineBeforeBlock”]
 ---
 
 Among Cisco SD-WAN's tools to steer or influence traffic across the overlay, the data policies are the ones providing the highest flexibility. For a primer about SD-WAN Data Policies, please refer to this article: [Cisco SD-WAN Data Policies](https://recurseit.com/post/2021/01/2021-01-27-cisco-sd-wan-data-policies/).
