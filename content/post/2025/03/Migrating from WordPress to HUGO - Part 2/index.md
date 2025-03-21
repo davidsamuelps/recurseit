@@ -95,6 +95,7 @@ To create an account in CloudFlare, follow this [link](https://www.cloudflare.co
 4. Lastly, click the "Select" option under "Connect you domain"
 
 **NOTE**: You could leave this step till the very end, after you feel more comfortable with HUGO (as you can run that locally and preview it) and want to fully migrate without looking back.
+**NOTE2**: You could use a DNS checker to verify the DNS servers your domain is using. A reference has been added below.
 
 Thank you for reading!
 
@@ -102,4 +103,4 @@ Thank you for reading!
 - [Transfer a Domain to Another Registrar](https://wordpress.com/support/domains/transfer-domain-registration/)
 - [Change a Domain’s Name Servers](https://wordpress.com/support/domains/change-name-servers/#changing-name-servers-to-point-away-from-word-press-com)
 - [Transfer your domain to Cloudflare](https://developers.cloudflare.com/registrar/get-started/transfer-domain-to-cloudflare/)
-- [DNS Checker](https://dnschecker.org/)
+- [DNS Checker](https://www.nslookup.io/)
