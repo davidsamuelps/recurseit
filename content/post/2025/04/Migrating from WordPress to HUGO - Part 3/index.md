@@ -1,6 +1,6 @@
 ---
 title: "Migrating from WordPress to HUGO - Part 3"
-date: "2025-04-XX"
+date: "2025-04-01"
 draft: true
 #categories: 
 #  - "ccnp"
