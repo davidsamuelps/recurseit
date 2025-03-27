@@ -15,7 +15,7 @@ tags:
 
 In the [previous blog](https://recurseit.com/post/2025/03/migrating-from-wordpress-to-hugo---part-1/) we spoke about the migration process at a high level, and a set of steps was mentioned. Let us bring those steps back in the section below:
 
-## The process I went through can be (roughly) outlined as follow:
+## The process I went through can be (roughly) outlined as follows:
 
 1. **Export your Wordpress Site**
 2. [**Migrate your domain to CloudFlare**](https://wordpress.com/support/domains/transfer-domain-registration/) **(Potato.com) - (optional)**
