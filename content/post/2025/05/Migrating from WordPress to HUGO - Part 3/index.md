@@ -14,7 +14,6 @@ tags:
 In the [previous blog](https://recurseit.com/post/2025/03/migrating-from-wordpress-to-hugo---part-2/) we spoke the first two steps of the migration process. In this blog we will continue with the following step (in bold). Let us bring those steps back in the section below:
 
 ## The process I went through can be (roughly) outlined as follows:
-
 1. Export your Wordpress Site
 2. [Migrate your domain to CloudFlare](https://wordpress.com/support/domains/transfer-domain-registration/) (Potato.com) - (optional)
 3. **Convert the exported site to Markdown (I found a wonderful tool written by [Bill Boyd](https://www.linkedin.com/in/willboyd/))**
@@ -40,7 +39,7 @@ Additionally, you will need the [WordPress export to Markdown tool](https://gith
 
 **NOTE**: This tool requires nodejs to work. The minimal version for nodejs is "20.5.0". In my case, as I have a RaspBerryPi and it runs RaspBerry Pi OS, a linux debian-based distro (Debian 12 (bookworm)). I did install nodejs through nvm (node version manager) to get v22. The steps I followed are below:
 
-1. Navigate to nvm's [repo](https://github.com/nvm-sh/nvm#installing-and-updating) and follow the instructions to install it:
+**1. Navigate to nvm's [repo](https://github.com/nvm-sh/nvm#installing-and-updating) and follow the instructions to install it:**
 ```
 dpenaloza@rpi-prague:~ $ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
@@ -80,7 +79,7 @@ v22.15.1
 dpenaloza@rpi-prague:~ $ npm -v
 10.9.2
 ```
-2. Create a folder to place your exported WordPress file and to clone the tool you are about to use. Mine looks like this:
+**2. Create a folder to place your exported WordPress file and to clone the tool you are about to use. Mine looks like this:**
 ```
 dpenaloza@rpi-prague:~/WP2Hugo $ tree
 .
@@ -91,7 +90,7 @@ dpenaloza@rpi-prague:~/WP2Hugo $ tree
 ```
 ##### Note the "markdown" folder: I have created it to be used as the output destination of the conversion.
 
-3. Once you have the required (or higher) nodejs version, clone the [WordPress export to Markdown tool](https://github.com/lonekorean/wordpress-export-to-markdown):
+**3. Once you have the required (or higher) nodejs version, clone the [WordPress export to Markdown tool](https://github.com/lonekorean/wordpress-export-to-markdown):**
 ```
 dpenaloza@rpi-prague:~/WP2Hugo $ git clone https://github.com/lonekorean/wordpress-export-to-markdown.git
 Cloning into 'wordpress-export-to-markdown'...
@@ -102,7 +101,7 @@ remote: Total 1356 (delta 501), reused 459 (delta 451), pack-reused 725 (from 3)
 Receiving objects: 100% (1356/1356), 401.29 KiB | 1.97 MiB/s, done.
 Resolving deltas: 100% (910/910), done.
 ```
-4. Once you have finished cloning it, your folders should look like this:
+**4. Once you have finished cloning it, your folders should look like this:**
 ```
 dpenaloza@rpi-prague:~/WP2Hugo $ tree
 .
@@ -128,7 +127,7 @@ dpenaloza@rpi-prague:~/WP2Hugo $ tree
 
 5 directories, 15 files
 ```
-5. At this point we are finally ready to run the tool and convert the exported file (.xml) into markdown. Let us finally pop the cherry!
+**5. At this point we are finally ready to run the tool and convert the exported file (.xml) into markdown. Let us finally pop the cherry!**
 Head to the folder where the tool has been cloned into, and run the command below and follow the wizard:
 ```
 dpenaloza@rpi-prague:~/WP2Hugo/wordpress-export-to-markdown $ npx wordpress-export-to-markdown
@@ -171,7 +170,7 @@ All done!
 Look for your output files in: /home/dpenaloza/WP2Hugo/markdown
 dpenaloza@rpi-prague:~/WP2Hugo/wordpress-export-to-markdown $ 
 ```
-6. Once the process has finished, look for the output folder:
+**6. Once the process has finished, look for the output folder:**
 ```
 dpenaloza@rpi-prague:~/WP2Hugo/markdown $ pwd
 /home/dpenaloza/WP2Hugo/markdown
