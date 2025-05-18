@@ -37,7 +37,7 @@ If you [followed the steps described by WordPress](https://wordpress.com/support
 
 Additionally, you will need the [WordPress export to Markdown tool](https://github.com/lonekorean/wordpress-export-to-markdown).
 
-**NOTE**: This tool requires nodejs to work. The minimal version for nodejs is "20.5.0". In my case, as I have a RaspBerryPi and it runs RaspBerry Pi OS, a linux debian-based distro (Debian 12 (bookworm)). I did install nodejs through nvm (node version manager) to get v22. The steps I followed are below:
+**NOTE**: This tool requires nodejs to work. The minimal version for nodejs is "20.5.0". In my case, as I have a RaspBerryPi and it runs RaspBerry Pi OS —a linux debian-based distro (Debian 12 (bookworm))— I did install nodejs through nvm (node version manager) to get v22. The steps I followed are below:
 
 **1. Navigate to nvm's [repo](https://github.com/nvm-sh/nvm#installing-and-updating) and follow the instructions to install it:**
 ```
@@ -79,8 +79,11 @@ v22.15.1
 dpenaloza@rpi-prague:~ $ npm -v
 10.9.2
 ```
-**2. Create a folder to place your exported WordPress file and to clone the tool you are about to use. Mine looks like this:**
+**2. Create a folder structure to place your exported WordPress file and to the tool you are about to use. Mine looks like this:**
 ```
+dpenaloza@rpi-prague:~/WP2Hugo $ pwd
+/home/dpenaloza/WP2Hugo
+
 dpenaloza@rpi-prague:~/WP2Hugo $ tree
 .
 ├── exported
@@ -90,7 +93,7 @@ dpenaloza@rpi-prague:~/WP2Hugo $ tree
 ```
 ##### Note the "markdown" folder: I have created it to be used as the output destination of the conversion.
 
-**3. Once you have the required (or higher) nodejs version, clone the [WordPress export to Markdown tool](https://github.com/lonekorean/wordpress-export-to-markdown):**
+**3. Once you have the required (or higher) nodejs version, clone the [WordPress export to Markdown tool](https://github.com/lonekorean/wordpress-export-to-markdown) using Git:**
 ```
 dpenaloza@rpi-prague:~/WP2Hugo $ git clone https://github.com/lonekorean/wordpress-export-to-markdown.git
 Cloning into 'wordpress-export-to-markdown'...
@@ -101,8 +104,11 @@ remote: Total 1356 (delta 501), reused 459 (delta 451), pack-reused 725 (from 3)
 Receiving objects: 100% (1356/1356), 401.29 KiB | 1.97 MiB/s, done.
 Resolving deltas: 100% (910/910), done.
 ```
-**4. Once you have finished cloning it, your folders should look like this:**
+**4. Once you have finished cloning it, your folder tree should look like this:**
 ```
+dpenaloza@rpi-prague:~/WP2Hugo $ pwd
+/home/dpenaloza/WP2Hugo
+
 dpenaloza@rpi-prague:~/WP2Hugo $ tree
 .
 ├── exported
@@ -174,6 +180,7 @@ dpenaloza@rpi-prague:~/WP2Hugo/wordpress-export-to-markdown $
 ```
 dpenaloza@rpi-prague:~/WP2Hugo/markdown $ pwd
 /home/dpenaloza/WP2Hugo/markdown
+
 dpenaloza@rpi-prague:~/WP2Hugo/markdown $ ls -la
 total 20
 drwxr-xr-x 5 dpenaloza dpenaloza 4096 May 18 14:42 .
