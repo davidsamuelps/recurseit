@@ -1,25 +1,23 @@
 ---
 title: "Migrating from WordPress to HUGO - Part 3"
-date: "2025-04-01"
-draft: true
+date: "2025-05-18"
+#draft: true
 #categories: 
 #  - "ccnp"
 tags: 
   - "hugo"
   - "wordpress"
-  - "cloudflare"
-  - "DNS"
-  - "domain"
   - "markdown"
+  - "linux" 
 ---
 
-In the [previous blog](https://recurseit.com/post/2025/03/migrating-from-wordpress-to-hugo---part-1/) we spoke about the migration process at a high level, and a set of steps was mentioned. Let us bring those steps back in the section below:
+In the [previous blog](https://recurseit.com/post/2025/03/migrating-from-wordpress-to-hugo---part-2/) we spoke the first two steps of the migration process. In this blog we will continue with the following step (in bold). Let us bring those steps back in the section below:
 
 ## The process I went through can be (roughly) outlined as follows:
 
-1. **Export your Wordpress Site**
-2. [**Migrate your domain to CloudFlare**](https://wordpress.com/support/domains/transfer-domain-registration/) **(Potato.com) - (optional)**
-3. Convert the exported site to Markdown (I found a wonderful tool written by [Bill Boyd](https://www.linkedin.com/in/willboyd/))
+1. Export your Wordpress Site
+2. [Migrate your domain to CloudFlare](https://wordpress.com/support/domains/transfer-domain-registration/) (Potato.com) - (optional)
+3. **Convert the exported site to Markdown (I found a wonderful tool written by [Bill Boyd](https://www.linkedin.com/in/willboyd/))**
 4. Install HUGO and run your website locally (I did run it in my RaspBerry Pi for a while)
 5. Create a repository in Github
 6. Push your local website structure into the repository (VSCode simplifies things)
@@ -30,77 +28,168 @@ In the [previous blog](https://recurseit.com/post/2025/03/migrating-from-wordpre
 11. Create DNS records to redirect your documentation website to your original domain (xyz.pages.dev -> xyz.com) - (optional)
 12. Keep on upskilling
 
-Although it might look unwieldy at first, it goes by rather quickly. If you do not have a WordPress domain/site at the moment, feel free to ignore steps 1-3. Given its lenght, **I will cover steps 1-2 in this post, and the rest will be covered in the following ones.**
+Following the previous blogs, we wil continue where we left off: **We will cover step 3 in this post, and the rest will be covered in the following ones.**
 
-### 1. Exporting your Wordpress Site
+### 3. Convert the exported site to Markdown
 
-As this step could be performed quickly and intuitively, and to avoid reinventing the wheel, please [follow the steps described by WordPress.](https://wordpress.com/support/export/)
+If you [followed the steps described by WordPress](https://wordpress.com/support/export/), you should have downloaded a compressed file with an .xml file inside. In my case, I obtained the following one (the amount of files may vary depending on your number of blogs and images):
 
-### 2. Migrating your Wordpress domain to CloudFlare (please read the note at the end of this step)
+![](images/WP2Hugo-1.png)
 
-This step could be confusing, given the number of processes, clicks, requests and corresponding data. Although WordPress and CloudFlare provide some instructions, they sometimes are not too detailed and could be elusive. The following lines are an attempt to guide you through it.
+Additionally, you will need the [WordPress export to Markdown tool](https://github.com/lonekorean/wordpress-export-to-markdown).
 
-Wordpress allows you to migrate your domain (recurseit.com - in my case) to another registrar. In order to do that you must create an account with your registrar of choice. In my case, it was CloudFlare. After creating the account, you must coordinate the transfer using both of their platforms. As the transfer takes time (4-7 days) you will carry on with the process asynchronously. 
+**NOTE**: This tool requires nodejs to work. The minimal version for nodejs is "20.5.0". In my case, as I have a RaspBerryPi and it runs RaspBerry Pi OS, a linux debian-based distro (Debian 12 (bookworm)). I did install nodejs through nvm (node version manager) to get v22. The steps I followed are below:
 
-To create an account in CloudFlare, follow this [link](https://www.cloudflare.com/plans/developer-platform/) and pick the "Workers Free" plan and then fill the information required to sign up:
+1. Navigate to nvm's [repo](https://github.com/nvm-sh/nvm#installing-and-updating) and follow the instructions to install it:
+```
+dpenaloza@rpi-prague:~ $ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 16631  100 16631    0     0  53770      0 --:--:-- --:--:-- --:--:-- 53996
+=> nvm is already installed in /home/dpenaloza/.nvm, trying to update using git
+=> => Compressing and cleaning up git repository
 
-![](images/CF1.png)
+=> nvm source string already in /home/dpenaloza/.bashrc
+=> bash_completion source string already in /home/dpenaloza/.bashrc
+=> Close and reopen your terminal to start using nvm or run the following to use it now:
 
-#### Before migrating your domain, you should use CloudFlare as your DNS server for your domain and website. The process to change them can be described as follows:
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+```
+Once you reset your terminal (or apply the commands above), make sure you install the nodejs and chalk (required for this tool as well) packages:
+```
+dpenaloza@rpi-prague:~ $ nvm install 22
+Downloading and installing node v22.15.1...
+Downloading https://nodejs.org/dist/v22.15.1/node-v22.15.1-linux-armv7l.tar.xz...
+########################################################################################################################################### 100.0%
+Computing checksum with sha256sum
+Checksums matched!
 
-1. In the Cloudflare dashboard, click on “Add” (upper right corner) and then on "Existing Domain".
-2. Introduce your domain and click the "Continue" button to scan your DNS records.
+Now using node v22.15.1 (npm v10.9.2)
+Creating default alias: default -> 22 (-> v22.15.1)
+dpenaloza@rpi-prague:~ $ npm install chalk
 
-![](images/CF3.png)
+added 67 packages, and audited 68 packages in 10s
 
-3. After the scan finishes (I had to use "potato.com" to show you the scan results in a capture - my domain is already at CloudFlare and it won't run the DNS scan), a list of records will be displayed (it will probably prompt you to choose a plan, select the "Free" one at the bottom). Cloudflare will show you a list of the DNS records it found.
+12 packages are looking for funding
+  run `npm fund` for details
 
-![](images/CF4.png)
+found 0 vulnerabilities
+dpenaloza@rpi-prague:~ $ node -v
+v22.15.1
+dpenaloza@rpi-prague:~ nvm current
+v22.15.1
+dpenaloza@rpi-prague:~ $ npm -v
+10.9.2
+```
+2. Create a folder to place your exported WordPress file and to clone the tool you are about to use. Mine looks like this:
+```
+dpenaloza@rpi-prague:~/WP2Hugo $ tree
+.
+├── exported
+│   └── recurseit.wordpress.2023-12-18.000.xml
+├── markdown
+└── wordpress-export-to-markdown
+```
+Note the "markdown" folder: I have created it to be used as the output destination of the conversion.
+3. Once you have the required (or higher) nodejs version, clone the [WordPress export to Markdown tool](https://github.com/lonekorean/wordpress-export-to-markdown):
+```
+dpenaloza@rpi-prague:~/WP2Hugo $ git clone https://github.com/lonekorean/wordpress-export-to-markdown.git
+Cloning into 'wordpress-export-to-markdown'...
+remote: Enumerating objects: 1356, done.
+remote: Counting objects: 100% (631/631), done.
+remote: Compressing objects: 100% (180/180), done.
+remote: Total 1356 (delta 501), reused 459 (delta 451), pack-reused 725 (from 3)
+Receiving objects: 100% (1356/1356), 401.29 KiB | 1.97 MiB/s, done.
+Resolving deltas: 100% (910/910), done.
+```
+4. Once you have finished cloning it, your folders should look like this:
+```
+dpenaloza@rpi-prague:~/WP2Hugo $ tree
+.
+├── exported
+│   └── recurseit.wordpress.2023-12-18.000.xml
+├── markdown
+└── wordpress-export-to-markdown
+    ├── app.js
+    ├── LICENSE.md
+    ├── package.json
+    ├── package-lock.json
+    ├── README.md
+    └── src
+        ├── data.js
+        ├── frontmatter.js
+        ├── intake.js
+        ├── normalizers.js
+        ├── parser.js
+        ├── questions.js
+        ├── shared.js
+        ├── translator.js
+        └── writer.js
 
-4. After you click the "Continue to activation" button, you will be shown a screen providing you with two (2) DNS servers to use and indicating they must be configured on your current provider's side:
+5 directories, 15 files
+```
+5. At this point we are finally ready to run the tool and convert the exported file (.xml) into markdown. Let us finally pop the cherry! Head to the folder where the tool has been cloned into, and run the command below and follow the wizard:
+```
+dpenaloza@rpi-prague:~/WP2Hugo/wordpress-export-to-markdown $ npx wordpress-export-to-markdown --wizard=true --input=/home/dpenaloza/WP2Hugo/exported/recurseit.wordpress.2023-12-18.000.xml --output=/home/dpenaloza/WP2Hugo/markdown/
 
-![](images/CF5.png)
+Starting wizard...
+✓ Put each post into its own folder? Yes
+✓ Add date prefix to posts? Yes
+✓ Organize posts into date folders? Year and month folders
+✓ Save images? All Images
 
-5. Click "Continue" and you will be sent to the "Last Step" section
+Parsing...
+17 normal posts found.
+4 pages found.
+22 custom "feedback" posts found.
+115 attached images found.
+87 images scraped from post body content.
 
-![](images/CF6.png)
+Saving posts...
+43 posts to save.
+✓ [post] first-blog-post
+✓ [page] about
+✓ [page] contact
+<Omitted for brevity>
+Done, got them all!
 
-6. Head to WordPress and check your current settings. Look for the "Upgrades" menu and click "Domains in Wordpress" under it.
-7. Head to the "Name Servers" section. Click to disable the “Use WordPress.com name servers” button.
-8. On CloudFlare, copy the DNS servers and return to WordPress to paste them into the text boxes provided and click “Save custom name servers” button in WordPress.
-9. Back in Cloudflare, click “Check nameservers” button at the bottom of the "Last Step" page. The change will take a while, be patient. If you are lucky, it could take only some mins. Go for lunch or take a walk in the meantime.
-10. You should receive an email from CloudFlare after some time confirming your change of status to "active" and that the DNS server change was successful.
+Saving images...
+122 images to save.
+✓ [image] gre-2-routers.png 
+✓ [image] r1-rib.png 
+✓ [image] r2-rib.png 
+✓ [image] packet-capture-r2-to-r1-ping.png 
+✓ [image] gre-p2p-3-routers.png 
+<Omitted for brevity>
+Done, got them all!
 
-#### Now that you have an account in both platforms, and have changed your DNS servers, the transfer process can begin:
+All done!
+Look for your output files in: /home/dpenaloza/WP2Hugo/markdown
+dpenaloza@rpi-prague:~/WP2Hugo/wordpress-export-to-markdown $ 
+```
+6. Once the process has finished, look for the output folder:
+```
+dpenaloza@rpi-prague:~/WP2Hugo/markdown $ pwd
+/home/dpenaloza/WP2Hugo/markdown
+dpenaloza@rpi-prague:~/WP2Hugo/markdown $ ls -la
+total 20
+drwxr-xr-x 5 dpenaloza dpenaloza 4096 May 18 14:42 .
+drwxr-xr-x 5 dpenaloza dpenaloza 4096 May 18 14:14 ..
+drwxr-xr-x 3 dpenaloza dpenaloza 4096 May 18 14:42 custom
+drwxr-xr-x 4 dpenaloza dpenaloza 4096 May 18 14:42 pages
+drwxr-xr-x 6 dpenaloza dpenaloza 4096 May 18 14:42 posts
+```
+And _Voilà_! You have converted your WordPress file into markdown!
 
-1. In WordPress look for the "Transfer Domain" option, under "Domain Registration" (my apologies, I do not have a capture of this section).
-2. Make sure the "Transfer lock" feature is off.
-3. After a while (give it 15 mins) your domain should be visible in CloudFlare for transfer. Look for the "Domain Registration" section and click the "Transfer Domains" button:
+#### After following the steps above you should have a markdown skeleton to start. What follows is to understand HUGO, its idiosyncrasies and folder structure/hierarchy.
 
-![](images/CF2.png)
-
-4. Select and confirm the domain you want to transfer.
-5. In WordPress, you will be shown an option to get an authorization code. It takes around 15 mins for the email to arrive.
-6. Back in CloudFlare, you will be asked to provide the code you received from WordPress to transfer the domain.
-7. You should received an email from CloudFlare confirming that the transfer has been requested.
-8. Some hours later you should receive an email from WordPress notifying you of the same transfer request. It will contain a link to the "Transfer Management" page.
-9. Click the "Accept Transfer" button in WordPress
-10. After a while you should receive an email from CloudFlare confirming that the transfer has been completed successfully.
-
-#### After doing this, your WordPress website (not your domain) will not be hosted in WordPress, so you have to point back your website at your domain.
-
-1. In WordPress look for the "Upgrades" menu, and under it "Domains in WordPress".
-2. Click "Add new domain" and then "Use a domain I own"
-3. Type the domain name and hit the "Continue" button
-4. Lastly, click the "Select" option under "Connect you domain"
-
-**NOTE**: You could leave this step till the very end, after you feel more comfortable with HUGO (as you can run that locally and preview it) and want to fully migrate without looking back.
-**NOTE2**: You could use a DNS checker to verify the DNS servers your domain is using. A reference has been added below.
+We will continue exploring HUGO in the next blog posts.
 
 Thank you for reading!
 
 # References and further reading:
-- [Transfer a Domain to Another Registrar](https://wordpress.com/support/domains/transfer-domain-registration/)
-- [Change a Domain’s Name Servers](https://wordpress.com/support/domains/change-name-servers/#changing-name-servers-to-point-away-from-word-press-com)
-- [Transfer your domain to Cloudflare](https://developers.cloudflare.com/registrar/get-started/transfer-domain-to-cloudflare/)
-- [DNS Checker](https://www.nslookup.io/)
+- [NodeJS](https://nodejs.org/en)
+- [NVM](https://github.com/nvm-sh/nvm)
+- [RaspBerry Pi OS](https://www.raspberrypi.com/software/)
