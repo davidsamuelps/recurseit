@@ -72,6 +72,7 @@ dpenaloza@rpi-prague:~ $ npm install chalk
 added 67 packages, and audited 68 packages in 10s
 
 found 0 vulnerabilities
+
 dpenaloza@rpi-prague:~ $ node -v
 v22.15.1
 dpenaloza@rpi-prague:~ nvm current
