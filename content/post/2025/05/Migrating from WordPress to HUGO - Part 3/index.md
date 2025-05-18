@@ -62,7 +62,7 @@ Once you reset your terminal (or apply the commands above), make sure you instal
 dpenaloza@rpi-prague:~ $ nvm install 22
 Downloading and installing node v22.15.1...
 Downloading https://nodejs.org/dist/v22.15.1/node-v22.15.1-linux-armv7l.tar.xz...
-########################################################################################################################################### 100.0%
+########################################################################## 100.0%
 Computing checksum with sha256sum
 Checksums matched!
 
@@ -71,9 +71,6 @@ Creating default alias: default -> 22 (-> v22.15.1)
 dpenaloza@rpi-prague:~ $ npm install chalk
 
 added 67 packages, and audited 68 packages in 10s
-
-12 packages are looking for funding
-  run `npm fund` for details
 
 found 0 vulnerabilities
 dpenaloza@rpi-prague:~ $ node -v
@@ -92,7 +89,8 @@ dpenaloza@rpi-prague:~/WP2Hugo $ tree
 ├── markdown
 └── wordpress-export-to-markdown
 ```
-Note the "markdown" folder: I have created it to be used as the output destination of the conversion.
+##### Note the "markdown" folder: I have created it to be used as the output destination of the conversion.#####
+
 3. Once you have the required (or higher) nodejs version, clone the [WordPress export to Markdown tool](https://github.com/lonekorean/wordpress-export-to-markdown):
 ```
 dpenaloza@rpi-prague:~/WP2Hugo $ git clone https://github.com/lonekorean/wordpress-export-to-markdown.git
