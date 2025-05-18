@@ -89,7 +89,7 @@ dpenaloza@rpi-prague:~/WP2Hugo $ tree
 ├── markdown
 └── wordpress-export-to-markdown
 ```
-##### Note the "markdown" folder: I have created it to be used as the output destination of the conversion.#####
+##### Note the "markdown" folder: I have created it to be used as the output destination of the conversion.
 
 3. Once you have the required (or higher) nodejs version, clone the [WordPress export to Markdown tool](https://github.com/lonekorean/wordpress-export-to-markdown):
 ```
@@ -130,7 +130,10 @@ dpenaloza@rpi-prague:~/WP2Hugo $ tree
 ```
 5. At this point we are finally ready to run the tool and convert the exported file (.xml) into markdown. Let us finally pop the cherry! Head to the folder where the tool has been cloned into, and run the command below and follow the wizard:
 ```
-dpenaloza@rpi-prague:~/WP2Hugo/wordpress-export-to-markdown $ npx wordpress-export-to-markdown --wizard=true --input=/home/dpenaloza/WP2Hugo/exported/recurseit.wordpress.2023-12-18.000.xml --output=/home/dpenaloza/WP2Hugo/markdown/
+dpenaloza@rpi-prague:~/WP2Hugo/wordpress-export-to-markdown $ npx wordpress-export-to-markdown
+--wizard=true
+--input=/home/dpenaloza/WP2Hugo/exported/recurseit.wordpress.2023-12-18.000.xml
+--output=/home/dpenaloza/WP2Hugo/markdown/
 
 Starting wizard...
 ✓ Put each post into its own folder? Yes
