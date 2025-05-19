@@ -134,6 +134,7 @@ dpenaloza@rpi-prague:~/WP2Hugo $ tree
 5 directories, 15 files
 ```
 **5. At this point we are finally ready to run the tool and convert the exported file (.xml). Let us finally pop the cherry!**
+
 Head to the folder where the tool has been cloned into, and run the command below and follow the wizard:
 ```
 dpenaloza@rpi-prague:~/WP2Hugo/wordpress-export-to-markdown $ npx wordpress-export-to-markdown
@@ -189,7 +190,6 @@ drwxr-xr-x 6 dpenaloza dpenaloza 4096 May 18 14:42 posts
 And _Voilà_! You have converted your WordPress file into markdown!
 
 #### After following the steps above you should have a markdown skeleton to start. What follows is to understand HUGO, its idiosyncrasies and folder structure/hierarchy.
-
 We will continue exploring HUGO in the next blog posts.
 
 Thank you for reading!
