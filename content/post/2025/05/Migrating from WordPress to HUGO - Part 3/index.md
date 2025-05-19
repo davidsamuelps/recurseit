@@ -135,7 +135,7 @@ dpenaloza@rpi-prague:~/WP2Hugo $ tree
 ```
 **5. At this point we are finally ready to run the tool and convert the exported file (.xml). Let us finally pop the cherry!**
 
-Head to the folder where the tool has been cloned into, and run the command below and follow the wizard:
+Head to the folder where the tool has been cloned into, run the command below and follow the wizard (some options have been added for convenience):
 ```
 dpenaloza@rpi-prague:~/WP2Hugo/wordpress-export-to-markdown $ npx wordpress-export-to-markdown
 --wizard=true
