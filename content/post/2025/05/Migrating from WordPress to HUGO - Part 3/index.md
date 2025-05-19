@@ -11,7 +11,7 @@ tags:
   - "linux" 
 ---
 
-In the [previous blog](https://recurseit.com/post/2025/03/migrating-from-wordpress-to-hugo---part-2/) we spoke the first two steps of the migration process. In this blog we will continue with the following step (in bold). Let us bring those steps back in the section below:
+In the [previous blog](https://recurseit.com/post/2025/03/migrating-from-wordpress-to-hugo---part-2/) we spoke about the first two steps of the migration process. In this one we will continue with the following step (in bold). Let us bring those steps back in the section below:
 
 ## The process I went through can be (roughly) outlined as follows:
 1. Export your Wordpress Site
@@ -27,17 +27,17 @@ In the [previous blog](https://recurseit.com/post/2025/03/migrating-from-wordpre
 11. Create DNS records to redirect your documentation website to your original domain (xyz.pages.dev -> xyz.com) - (optional)
 12. Keep on upskilling
 
-Following the previous blogs, we wil continue where we left off: **We will cover step 3 in this post, and the rest will be covered in the following ones.**
+**We will cover step 3 in this post, and the rest will be covered in the following ones.**
 
 ### 3. Convert the exported site to Markdown
 
-If you [followed the steps described by WordPress](https://wordpress.com/support/export/), you should have downloaded a compressed file with an .xml file inside. In my case, I obtained the following one (the amount of files may vary depending on your number of blogs and images):
+If you [followed the steps described by WordPress](https://wordpress.com/support/export/), you should have downloaded a compressed file with an .xml file inside. In my case, I obtained the following one (the amount of files may vary depending on your number of posts and images):
 
 ![](images/WP2Hugo-1.png)
 
 Additionally, you will need the [WordPress export to Markdown tool](https://github.com/lonekorean/wordpress-export-to-markdown).
 
-**NOTE**: This tool requires nodejs to work. The minimal version for nodejs is "20.5.0". In my case, as I have a RaspBerryPi and it runs RaspBerry Pi OS —a linux debian-based distro (Debian 12 (bookworm))— I did install nodejs through nvm (node version manager) to get v22. The steps I followed are below:
+**NOTE**: This tool requires nodejs to work. The minimal version required is v20.5.0. In my case, as I have a RaspBerryPi and it runs RaspBerry Pi OS —a linux debian-based distro (Debian 12 (bookworm))— I did install nodejs through nvm (node version manager) in order to get v22 (you could install the minimal one required, there is a reference at the bottom). The steps I followed are below:
 
 **1. Navigate to nvm's [repo](https://github.com/nvm-sh/nvm#installing-and-updating) and follow the instructions to install it:**
 ```
@@ -67,11 +67,11 @@ Checksums matched!
 
 Now using node v22.15.1 (npm v10.9.2)
 Creating default alias: default -> 22 (-> v22.15.1)
+
 dpenaloza@rpi-prague:~ $ npm install chalk
-
 added 67 packages, and audited 68 packages in 10s
-
 found 0 vulnerabilities
+
 dpenaloza@rpi-prague:~ $ node -v
 v22.15.1
 dpenaloza@rpi-prague:~ nvm current
@@ -166,15 +166,12 @@ Saving images...
 122 images to save.
 ✓ [image] gre-2-routers.png 
 ✓ [image] r1-rib.png 
-✓ [image] r2-rib.png 
 ✓ [image] packet-capture-r2-to-r1-ping.png 
-✓ [image] gre-p2p-3-routers.png 
 <Omitted for brevity>
 Done, got them all!
 
 All done!
 Look for your output files in: /home/dpenaloza/WP2Hugo/markdown
-dpenaloza@rpi-prague:~/WP2Hugo/wordpress-export-to-markdown $ 
 ```
 **6. Once the process has finished, look for the output folder:**
 ```
