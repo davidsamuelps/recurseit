@@ -147,13 +147,13 @@ drwxrwxr-x  2 test test 4096 srp  9 21:17 i18n
 drwxrwxr-x  2 test test 4096 srp  9 21:17 layouts
 drwxrwxr-x  2 test test 4096 srp  9 21:17 static
 drwxrwxr-x  2 test test 4096 srp  9 21:17 themes
+
 test@test:~/hugo-release/my-site$ tree
 .
 ├── archetypes
 │   └── default.md
 ├── assets
 ├── content
-└── posts
 ├── data
 ├── hugo.toml
 ├── i18n
