@@ -1,7 +1,7 @@
 ---
-title: "Migrating from WordPress to HUGO - Part 4"
+title: "Migrating from WordPress to HUGO - Part 5"
 date: "2025-08-09"
-#draft: true
+draft: true
 #categories: 
 #  - "ccnp"
 tags: 
@@ -10,6 +10,10 @@ tags:
   - "markdown"
   - "linux"
   - "git"
+  - "github"
+  - "repository"
+  - "commit"
+  - "push"
 ---
 
 In the [previous blog](https://recurseit.com/post/2025/05/migrating-from-wordpress-to-hugo---part-3/) we spoke about the third step of the migration process. In this blog we will continue with the following step (in bold). Let us bring those steps back in the section below:
@@ -214,7 +218,7 @@ test@test:~/hugo-release/my-site$ tree -L 5
 ```
 #### After following the steps above you should have a markdown skeleton to start. What follows is to understand the directory structure/hierarchy and slowly start running it locally.
 
-We will continue exploring HUGO and Git in the next blog posts.
+We will continue exploring HUGO in the next blog posts.
 
 Thank you for reading!
 
