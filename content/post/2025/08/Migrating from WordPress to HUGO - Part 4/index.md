@@ -28,7 +28,7 @@ In the [previous blog](https://recurseit.com/post/2025/05/migrating-from-wordpre
 11. Create DNS records to redirect your documentation website to your original domain (xyz.pages.dev -> xyz.com) - (optional)
 12. Keep on upskilling
 
-#### **If you had your website in WordPress before this step or not, here is where all flows converge.**
+#### **Regardless of you having a website in WordPress before this step or not, here is where both flows converge.**
 Following the previous blogs, we wil continue where we left off: **We will cover step 4 in this post, and the rest will be covered in the following ones.**
 
 If you followed the steps described in the [previous blog](https://recurseit.com/post/2025/05/migrating-from-wordpress-to-hugo---part-3/), you should have a folder structure like this (I have added some options to limit the output for readability):
