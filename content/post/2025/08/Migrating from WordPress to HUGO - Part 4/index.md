@@ -51,9 +51,9 @@ Pay attention to the folder structure, it is of utmost importance, as HUGO relie
 
 Preventing myself from being another a victim of the [law of diminishing returns](https://en.wikipedia.org/wiki/Diminishing_returns), I will refer you to [HUGO's official documentation explaining the directory structure](ttps://gohugo.io/getting-started/directory-structure/).
 
-As you may have noticed, the directory is missing a series of files and folder which are configuration-related, and not content-related (which should already be there, under the "posts" folder).
+As you may have noticed, the directory structure above is missing a series of files and folders which are configuration-related, and not content-related (which should already be there, under the "posts" folder).
 
-What should we do? **We will install HUGO and create a site from scratch.**
+What should we do? **We will install HUGO and create a site from scratch to create the missing folders and settings and then move the content there.**
 
 ### 4. Install HUGO and run your website locally (I did run it in my RaspBerry Pi for a while)
 
