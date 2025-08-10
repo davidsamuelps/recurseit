@@ -49,7 +49,7 @@ dpenaloza@rpi-prague:~/WP2Hugo/markdown $ tree -dL 2
 ```
 Pay attention to the folder structure, it is of utmost importance, as HUGO relies on a hierarchical set of files and folders to function correctly. In other words: structure and organization are key.
 
-Preventing myself from being another a victim of the [law of diminishing returns](https://en.wikipedia.org/wiki/Diminishing_returns), I will refer you to [HUGO's official documentation explaining the directory structure](ttps://gohugo.io/getting-started/directory-structure/).
+Preventing myself from being another a victim of the [law of diminishing returns](https://en.wikipedia.org/wiki/Diminishing_returns), I will refer you to [HUGO's official documentation explaining the directory structure](https://gohugo.io/getting-started/directory-structure/).
 
 As you may have noticed, the directory structure above is missing a series of files and folders which are configuration-related, and not content-related (which should already be there, under the "posts" folder).
 
