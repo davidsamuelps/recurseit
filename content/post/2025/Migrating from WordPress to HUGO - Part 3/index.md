@@ -11,7 +11,7 @@ tags:
   - "linux" 
 ---
 
-In the [previous blog](https://recurseit.com/post/2025/03/migrating-from-wordpress-to-hugo---part-2/) we spoke about the first two steps of the migration process. In this one we will continue with the following step (in bold). Let us bring those steps back in the section below:
+In the [previous blog](https://recurseit.com/post/2025/migrating-from-wordpress-to-hugo---part-2/) we spoke about the first two steps of the migration process. In this one we will continue with the following step (in bold). Let us bring those steps back in the section below:
 
 ## The process I went through can be (roughly) outlined as follows:
 1. Export your Wordpress Site

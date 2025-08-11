@@ -5,11 +5,8 @@ title = "RecurseIT"
 #THEME#
 theme = ["m10c-27-02-2024"]
 
-#BLACKFRIDAY MODULE#
-#[module]
-#  [[module.imports]]
-#    path = "github.com/russross/blackfriday"
-#    disable = false
+#MODULES GO HERE
+
 
 [pagination]
   pagerSize = 8
@@ -40,6 +37,10 @@ theme = ["m10c-27-02-2024"]
     icon = "linkedin"
     name = "LinkedIn"
     url = "https://linkedin.com/in/davidsamuelps"
+  [[params.social]]
+    icon = "github"
+    name = "davidsamuelps"
+    url = "https://github.com/davidsamuelps"
   [[params.social]]
     icon = "twitter"
     name = "davidsamuelps"

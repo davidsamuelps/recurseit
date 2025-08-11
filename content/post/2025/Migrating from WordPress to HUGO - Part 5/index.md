@@ -16,7 +16,7 @@ tags:
   - "push"
 ---
 
-In the [previous blog](https://recurseit.com/post/2025/05/migrating-from-wordpress-to-hugo---part-3/) we spoke about the third step of the migration process. In this blog we will continue with the following step (in bold). Let us bring those steps back in the section below:
+In the [previous blog](https://recurseit.com/post/2025/migrating-from-wordpress-to-hugo---part-3/) we spoke about the third step of the migration process. In this blog we will continue with the following step (in bold). Let us bring those steps back in the section below:
 
 ## The process I went through can be (roughly) outlined as follows:
 1. Export your Wordpress Site
@@ -35,7 +35,7 @@ In the [previous blog](https://recurseit.com/post/2025/05/migrating-from-wordpre
 #### **If you had your website in WordPress before this step or not, here is where all flows converge.**
 Following the previous blogs, we wil continue where we left off: **We will cover step 4 in this post, and the rest will be covered in the following ones.**
 
-If you followed the steps described in the [previous blog](https://recurseit.com/post/2025/05/migrating-from-wordpress-to-hugo---part-3/), you should have a folder structure like this (I have added some options to limit the output for readability):
+If you followed the steps described in the [previous blog](https://recurseit.com/post/2025/migrating-from-wordpress-to-hugo---part-3/), you should have a folder structure like this (I have added some options to limit the output for readability):
 
 ```
 dpenaloza@rpi-prague:~/WP2Hugo/markdown $ tree -dL 2
