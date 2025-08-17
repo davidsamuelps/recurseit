@@ -209,6 +209,11 @@ test@test:~/hugo-release/my-site$ tree -L 5
 ├── hugo.toml
 ├── i18n
 ├── layouts
+├── pages
+│   ├── about
+│   │   └── index.md
+│   └── contact
+│       └── index.md
 ├── static
 └── themes
 ```
@@ -221,3 +226,4 @@ Thank you for reading!
 # References and further reading:
 - [HUGO - official documentation](https://gohugo.io/documentation/)
 - [HUGO - additional learning resources](https://gohugo.io/getting-started/external-learning-resources/)
+- [HUGO Mini Course](https://hugo-mini-course.netlify.app/)

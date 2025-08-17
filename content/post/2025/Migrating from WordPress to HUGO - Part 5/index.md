@@ -16,15 +16,15 @@ tags:
   - "push"
 ---
 
-In the [previous blog](https://recurseit.com/post/2025/migrating-from-wordpress-to-hugo---part-3/) we spoke about the third step of the migration process. In this blog we will continue with the following step (in bold). Let us bring those steps back in the section below:
+In the [previous blog](https://recurseit.com/post/2025/migrating-from-wordpress-to-hugo---part-3/) we spoke about the fourth step of the migration process. In this blog we will continue expanding on it, and we will follow with the next ones (in bold). Let us bring those steps back in the section below:
 
 ## The process I went through can be (roughly) outlined as follows:
 1. Export your Wordpress Site
 2. [Migrate your domain to CloudFlare](https://wordpress.com/support/domains/transfer-domain-registration/) (Potato.com) - (optional)
 3. Convert the exported site to Markdown (I found a wonderful tool written by [Bill Boyd](https://www.linkedin.com/in/willboyd/))
 4. **Install HUGO and run your website locally (I did run it in my RaspBerry Pi for a while)**
-5. Create a repository in Github
-6. Push your local website structure into the repository (VSCode simplifies things)
+5. **Create a repository in Github**
+6. **Push your local website structure into the repository (VSCode simplifies things)**
 7. Create a CloudFlare account
 8. Create a developer documentation page through a Worker
 9. Link the developer page to your GitHub repository
