@@ -1,0 +1,12 @@
+# .gitignore (repo root)
+
+# Hugo build
+/public/
+/resources/_gen/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/

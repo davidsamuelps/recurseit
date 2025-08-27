@@ -1,0 +1,22 @@
+// Works for all Markdown links in content/summaries.
+// Skips mailto:/tel: and site-internal URLs (absolute or /relative).
+
+{{/* 
+  layouts/partials/render_link.html
+  ------------------------------------
+  Overrides the rendering of Markdown links to HTML.
+  https://gohugo.io/render-hooks/links/
+  Features:
+    - Works for all Markdown links in content/summaries.
+    - Skips mailto:/tel: and site-internal URLs (absolute or /relative).
+    - Markdown links: handled at build time (best).
+    - Any stray hardcoded HTML links: upgraded at runtime.
+*/}}
+
+{{- $href := .Destination | safeURL -}}
+{{- $isHTTP := or (hasPrefix $href "http://") (hasPrefix $href "https://") -}}
+{{- $isMailTel := or (hasPrefix $href "mailto:") (hasPrefix $href "tel:") -}}
+{{- $isInternalAbs := hasPrefix $href (site.BaseURL) -}}
+{{- $isInternalRel := hasPrefix $href "/" -}}
+{{- $isExternal := and $isHTTP (not (or $isInternalAbs $isInternalRel)) -}}
+<a href="{{ $href }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if $isExternal }} target="_blank" rel="noopener noreferrer"{{ end }}>{{ .Text | safeHTML }}</a>
