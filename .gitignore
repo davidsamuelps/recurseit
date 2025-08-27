@@ -3,6 +3,7 @@
 # Hugo build
 /public/
 /resources/_gen/
+.hugo_build.lock
 
 # OS/editor noise
 .DS_Store

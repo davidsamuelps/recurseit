@@ -1,6 +1,7 @@
 baseURL = 'https://recurseit.com/'
 languageCode = 'en-us'
 title = "RecurseIT"
+enableRobotsTXT = true
 
 #THEME#
 theme = ["m10c-27-02-2024"]
