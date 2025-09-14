@@ -1,7 +1,8 @@
 ---
-title: "Migrating from WordPress to HUGO - Part 5"
+title: "Migrating from WordPress to HUGO - Part 4"
+slug: "migrating-from-wordpress-to-hugo-part-4"
 date: "2025-08-09"
-draft: true
+#draft: true
 #categories: 
 #  - "ccnp"
 tags: 
@@ -10,21 +11,17 @@ tags:
   - "markdown"
   - "linux"
   - "git"
-  - "github"
-  - "repository"
-  - "commit"
-  - "push"
 ---
 
-In the [previous blog](https://recurseit.com/post/2025/migrating-from-wordpress-to-hugo---part-3/) we spoke about the fourth step of the migration process. In this blog we will continue expanding on it, and we will follow with the next ones (in bold). Let us bring those steps back in the section below:
+In the [previous blog](https://recurseit.com/post/2025/migrating-from-wordpress-to-hugo-part-3/) we spoke about the third step of the migration process. In this blog we will continue with the following step (in bold). Let us bring those steps back in the section below:
 
 ## The process I went through can be (roughly) outlined as follows:
 1. Export your Wordpress Site
 2. [Migrate your domain to CloudFlare](https://wordpress.com/support/domains/transfer-domain-registration/) (Potato.com) - (optional)
 3. Convert the exported site to Markdown (I found a wonderful tool written by [Bill Boyd](https://www.linkedin.com/in/willboyd/))
 4. **Install HUGO and run your website locally (I did run it in my RaspBerry Pi for a while)**
-5. **Create a repository in Github**
-6. **Push your local website structure into the repository (VSCode simplifies things)**
+5. Create a repository in Github
+6. Push your local website structure into the repository (VSCode simplifies things)
 7. Create a CloudFlare account
 8. Create a developer documentation page through a Worker
 9. Link the developer page to your GitHub repository
@@ -32,10 +29,10 @@ In the [previous blog](https://recurseit.com/post/2025/migrating-from-wordpress-
 11. Create DNS records to redirect your documentation website to your original domain (xyz.pages.dev -> xyz.com) - (optional)
 12. Keep on upskilling
 
-#### **If you had your website in WordPress before this step or not, here is where all flows converge.**
+#### **Regardless of you having a website in WordPress before this step or not, here is where both flows converge.**
 Following the previous blogs, we wil continue where we left off: **We will cover step 4 in this post, and the rest will be covered in the following ones.**
 
-If you followed the steps described in the [previous blog](https://recurseit.com/post/2025/migrating-from-wordpress-to-hugo---part-3/), you should have a folder structure like this (I have added some options to limit the output for readability):
+If you followed the steps described in the [previous blog](https://recurseit.com/post/2025/migrating-from-wordpress-to-hugo-part-3/), you should have a folder structure like this (I have added some options to limit the output for readability):
 
 ```
 dpenaloza@rpi-prague:~/WP2Hugo/markdown $ tree -dL 2
@@ -53,11 +50,11 @@ dpenaloza@rpi-prague:~/WP2Hugo/markdown $ tree -dL 2
 ```
 Pay attention to the folder structure, it is of utmost importance, as HUGO relies on a hierarchical set of files and folders to function correctly. In other words: structure and organization are key.
 
-Preventing myself from being another a victim of the [law of diminishing returns](https://en.wikipedia.org/wiki/Diminishing_returns), I will refer you to [HUGO's official documentation explaining the directory structure](ttps://gohugo.io/getting-started/directory-structure/).
+Preventing myself from being another a victim of the [law of diminishing returns](https://en.wikipedia.org/wiki/Diminishing_returns), I will refer you to [HUGO's official documentation explaining the directory structure](https://gohugo.io/getting-started/directory-structure/).
 
-As you may have noticed, the directory is missing a series of files and folder which are configuration-related, and not content-related (which should already be there, under the "posts" folder).
+As you may have noticed, the directory structure above is missing a series of files and folders which are configuration-related, and not content-related (which should already be there, under the "posts" folder).
 
-What should we do? **We will install HUGO and create a site from scratch.**
+What should we do? **We will install HUGO and create a site from scratch to create the missing folders and settings and then move the content there.**
 
 ### 4. Install HUGO and run your website locally (I did run it in my RaspBerry Pi for a while)
 
@@ -151,13 +148,13 @@ drwxrwxr-x  2 test test 4096 srp  9 21:17 i18n
 drwxrwxr-x  2 test test 4096 srp  9 21:17 layouts
 drwxrwxr-x  2 test test 4096 srp  9 21:17 static
 drwxrwxr-x  2 test test 4096 srp  9 21:17 themes
+
 test@test:~/hugo-release/my-site$ tree
 .
 ├── archetypes
 │   └── default.md
 ├── assets
 ├── content
-└── posts
 ├── data
 ├── hugo.toml
 ├── i18n
@@ -213,15 +210,21 @@ test@test:~/hugo-release/my-site$ tree -L 5
 ├── hugo.toml
 ├── i18n
 ├── layouts
+├── pages
+│   ├── about
+│   │   └── index.md
+│   └── contact
+│       └── index.md
 ├── static
 └── themes
 ```
 #### After following the steps above you should have a markdown skeleton to start. What follows is to understand the directory structure/hierarchy and slowly start running it locally.
 
-We will continue exploring HUGO in the next blog posts.
+We will continue exploring HUGO and Git in the next blog posts.
 
 Thank you for reading!
 
 # References and further reading:
 - [HUGO - official documentation](https://gohugo.io/documentation/)
 - [HUGO - additional learning resources](https://gohugo.io/getting-started/external-learning-resources/)
+- [HUGO Mini Course](https://hugo-mini-course.netlify.app/)

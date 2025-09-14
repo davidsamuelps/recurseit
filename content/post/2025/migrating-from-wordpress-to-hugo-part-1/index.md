@@ -1,5 +1,6 @@
 ---
 title: "Migrating from WordPress to HUGO - Part 1"
+slug: "migrating-from-wordpress-to-hugo-part-1"
 date: "2025-03-14"
 #draft: true
 #categories: 
