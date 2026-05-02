@@ -1,5 +1,6 @@
 ---
 title: "Migrating from WordPress to HUGO - Part 2"
+slug: "migrating-from-wordpress-to-hugo-part-2"
 date: "2025-03-21"
 #draft: true
 #categories: 
@@ -13,7 +14,7 @@ tags:
   - "markdown"
 ---
 
-In the [previous blog](https://recurseit.com/post/2025/migrating-from-wordpress-to-hugo---part-1/) we spoke about the migration process at a high level, and a set of steps was mentioned. Let us bring those steps back in the section below:
+In the [previous blog](https://recurseit.com/post/2025/migrating-from-wordpress-to-hugo-part-1/) we spoke about the migration process at a high level, and a set of steps was mentioned. Let us bring those steps back in the section below:
 
 ## The process I went through can be (roughly) outlined as follow:
 
