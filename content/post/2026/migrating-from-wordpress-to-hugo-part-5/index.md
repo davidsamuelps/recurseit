@@ -374,7 +374,7 @@ tags:
 ---
 ```
 That is called [*frontmatter*](https://gohugo.io/content-management/front-matter/) and it defines the information that identifies your post. Every post must have it.
-Below the "---" or "+++" (either works) your content will begin, the file is your canvas and markdown your format.
+Below the "- - -" or "+++" (either works) your content will begin, the file is your canvas and markdown your format.
 
 Lets add content to the file (below the "---"):
 ```
