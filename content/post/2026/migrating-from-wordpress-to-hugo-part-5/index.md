@@ -433,7 +433,7 @@ Press Ctrl+C to stop
 ```
 **Note 3**: ignore the warnings.
 
-Open your browser and navigate to http://localhost:1313/posts/ and click your first blog post:
+Open your browser and navigate to [http://localhost:1313/posts/](http://localhost:1313/posts/) and click your first blog post:
 
 ![](images/first-blog-post.png)
 
