@@ -1,8 +1,8 @@
 ---
-title: "Migrating from WordPress to HUGO - Part 5"
-slug: "migrating-from-wordpress-to-hugo-part-5"
-date: "2026-08-31"
-draft: true
+title: "Migrating from WordPress to HUGO - Part 4.5"
+slug: "migrating-from-wordpress-to-hugo-part-4.5"
+date: "2026-08-27"
+#draft: true
 #categories: 
 #  - "ccnp"
 tags: 
@@ -17,15 +17,19 @@ tags:
   - "push"
 ---
 
-In the [previous blog](https://recurseit.com/post/2025/migrating-from-wordpress-to-hugo-part-4/) we spoke about the fourth step of the migration process. In this blog we will continue expanding on it, and we will follow with the next ones (in bold). Let us bring those steps back in the section below:
+Hello all!
+
+It's been a while since my last post. I intend to continue with the blog post series (apologies for the delay), and for that, level-setting is paramount. Since the last post many things have changed (mostly about versioning), so I will resume where the previous post left off, with the required clarifications in this blog.
+
+In the [previous post](https://recurseit.com/post/2025/migrating-from-wordpress-to-hugo-part-4/) we spoke about the fourth step of the migration process. In this post we will continue expanding on it (in bold). Let us bring those steps back in the section below:
 
 ## The process I went through can be (roughly) outlined as follows:
 1. Export your Wordpress Site
 2. [Migrate your domain to CloudFlare](https://wordpress.com/support/domains/transfer-domain-registration/) (Potato.com) - (optional)
 3. Convert the exported site to Markdown (I found a wonderful tool written by [Bill Boyd](https://www.linkedin.com/in/willboyd/))
 4. **Install HUGO and run your website locally (I did run it in my RaspBerry Pi for a while)**
-5. **Create a repository in Github**
-6. **Push your local website structure into the repository (VSCode simplifies things)**
+5. Create a repository in Github
+6. Push your local website structure into the repository (VSCode simplifies things)
 7. Create a CloudFlare account
 8. Create a developer documentation page through a Worker
 9. Link the developer page to your GitHub repository
@@ -33,144 +37,102 @@ In the [previous blog](https://recurseit.com/post/2025/migrating-from-wordpress-
 11. Create DNS records to redirect your documentation website to your original domain (xyz.pages.dev -> xyz.com) - (optional)
 12. Keep on upskilling
 
-#### **If you had your website in WordPress before this step or not, here is where all flows converge.**
-Following the previous blogs, we wil continue where we left off: **We will cover step 4 in this post, and the rest will be covered in the following ones.**
+### Changes and clarifications
 
-If you followed the steps described in the [previous blog](https://recurseit.com/post/2025/migrating-from-wordpress-to-hugo-part-4/), you should have a folder structure like this (I have added some options to limit the output for readability):
+As some time passed since the last blog post, the current OS and library versions used have changed. Below are the current release, their corresponding verifications, and install process:
 
+- OS version: Ubuntu v26.04 LTS
+- Hugo version: v0.165.0 (latest)
+- Git version: v2.53.0
+
+#### Verifying OS version
 ```
-dpenaloza@rpi-prague:~/WP2Hugo/markdown $ tree -dL 2
-.
-├── custom
-│   └── feedback
-├── pages
-│   ├── 2016
-│   └── _drafts
-└── posts
-    ├── 2016
-    ├── 2018
-    ├── 2020
-    └── 2021
+test@ubuntu-vm:/home$ cat /etc/os-release | grep -i version
+VERSION_ID="26.04"
+VERSION="26.04 LTS (Resolute Raccoon)"
+VERSION_CODENAME=resolute
 ```
-Pay attention to the folder structure, it is of utmost importance, as HUGO relies on a hierarchical set of files and folders to function correctly. In other words: structure and organization are key.
 
-Preventing myself from being another a victim of the [law of diminishing returns](https://en.wikipedia.org/wiki/Diminishing_returns), I will refer you to [HUGO's official documentation explaining the directory structure](ttps://gohugo.io/getting-started/directory-structure/).
-
-As you may have noticed, the directory is missing a series of files and folder which are configuration-related, and not content-related (which should already be there, under the "posts" folder).
-
-What should we do? **We will install HUGO and create a site from scratch.**
-
-### 4. Install HUGO and run your website locally (I did run it in my RaspBerry Pi for a while)
-
-[Installing](https://gohugo.io/installation/linux/) HUGO could be as simple as running the following command (assuming you are running RaspBerry Pi OS):
+#### Verifying Git version before installing via APT
 ```
-sudo apt install hugo
+test@ubuntu-vm:/home$ sudo apt-cache show git | grep Version
+Version: 1:2.53.0-1ubuntu1
 ```
-However, the latest version is not always updated in the repositories maintained for every Linux release, they often lag behind.
-An example of this is that according to [HUGO's official GitHub repository](https://github.com/gohugoio/hugo/releases) the latest release —at the time of this writing— is v0.148.2, however, debian (stable) [repos](https://packages.debian.org/search?keywords=hugo) show an older version available from the CLI:
-```
-dpenaloza@rpi-prague:~ $ sudo apt-cache show hugo | grep Version
-Version: 0.111.3-1
----
-dpenaloza@rpi-prague:~ $ apt-cache madison hugo
-  hugo |  0.111.3-1 | http://raspbian.raspberrypi.com/raspbian bookworm/main armhf Packages
-```
-In cases like this one, please refer to the developer's latest/more stable release (unless a specific one is required).
 
-Go ahead and browse [HUGO's official GitHub repository](https://github.com/gohugoio/hugo/releases), download the release file and install it manually using your Linux distributions' package manager:
-![](images/WP2Hugo-4-1.png)
-
-You could do either of the following:
-- Download the file directly and place it into a subfolder in the HUGO directory
-- Download it via CLI (copy the file's link from the repo first) directly into the folder
-
-Why so many files? Each file corresponds with a specific [package manager](https://www.linode.com/docs/guides/linux-package-management-overview/) and processor architecture.
-How to know which one is the best for you? The command below will display your current processor architecture:
+##### Installing Git:
 ```
-dpenaloza@rpi-prague:~/WP2Hugo/hugo-release $ uname -m
-armv7l
-```
-In my case, the ARM architecture is a bit tricky and the recommendation is to compile it yourself from scratch (not usual and wont happen to you if you are running it in a VM)
-
-Ideally, your process should be akin the following (I did this in an Ubuntu 22.04 LTS VM deployed using VMware Workstation):
-
-#### Installing HUGO, Git and Go
-```
-test@test:~$ sudo apt-get install hugo
-Reading package lists... Done
-Building dependency tree... Done
-Reading state information... Done
+test@ubuntu-vm:/home$ sudo apt-get install git
+<...>
 The following additional packages will be installed:
-  git git-man liberror-perl libsass1
+  git-man liberror-perl
+Suggested packages:
+  git-doc git-email git-gui gitk gitweb git-cvs git-svn
+The following NEW packages will be installed:
+  git git-man liberror-perl
+0 upgraded, 3 newly installed, 0 to remove and 18 not upgraded.
+Need to get 5,453 kB of archives.
+After this operation, 28.4 MB of additional disk space will be used.
 <...>
-test@test:~$ hugo version
-hugo v0.92.2+extended linux/amd64 BuildDate=2023-01-31T11:11:57Z VendorInfo=ubuntu:0.92.2-1ubuntu0.1
 ```
-##### The version in the repository was v0.92, so we will manually install the latest one (v.148.2). We can do it by copying the link of the file matching the VM's distro and architecture: "hugo_extended_0.148.2_linux-arm64.deb" and downloading it using the "wget" command:
+##### Verifying Git version after installing via APT
+```
+test@ubuntu-vm:/home$ git version
+git version 2.53.0
+```
+#### Verifying Hugo repository version before installing via APT
+```
+test@ubuntu-vm:/home$ apt-cache policy hugo
+hugo:
+  Installed: (none)
+  Candidate: 0.154.5-1
+  Version table:
+     0.154.5-1 500
+        500 http://es.archive.ubuntu.com/ubuntu resolute/universe amd64 Packages
+```
+Hugo offers several versions:
+- Standard (the one available in the repository above)
+  - For Core Hugo functionality	Maximum portability, minimal dependencies
+- Extended
+  - Core + libsass (SCSS/SASS) + libwebp (image processing)	Advanced asset pipelines, image optimization
+- Extended+Deploy
+  - Extended,withdeploy	Yes	Extended + hugo deploy command	Full-featured builds with cloud deployment
 
-##### Creating folder for the installation file, moving towards it and installing it via package manager:
-```
-test@test:~$ mkdir hugo-release&&cd hugo-release/
-test@test:~/hugo-release$ wget https://github.com/gohugoio/hugo/releases/download/v0.148.2/hugo_extended_0.148.2_linux-amd64.deb
-<...>
-test@test:~/hugo-release$ sudo dpkg -i hugo_extended_0.148.2_linux-amd64.deb 
-```
-##### Lastly, installing Go through snap
-```
-test@test:~/hugo-release$ sudo snap install go --classic
-go 1.24.5 from Canonical✓ installed
-```
-#### Checking installed versions of Hugo, Git and go:
-```
-test@test:~/hugo-release$ hugo version
-hugo v0.148.2-40c3d8233d4b123eff74725e5766fc6272f0a84d+extended linux/amd64 BuildDate=2025-07-27T12:43:24Z VendorInfo=gohugoio
+Credits to [deep wiki](https://deepwiki.com/gohugoio/hugo/8.2-build-variants-and-editions) as [Hugo's documentation](https://gohugo.io/installation/linux/) is a bit brief about this (the notes are minimal).
 
-test@test:~/hugo-release$ go version
-go version go1.24.5 linux/amd64
+Some templates require the extended version, and for that matter, and ease of testing in the future, the recommendation is to use the extended version.
 
-test@test:~/hugo-release$ git version
-git version 2.34.1
-```
-#### Now that we have installed what we needed, we can create a skeleton of a website
-```
-test@test:~/hugo-release$ hugo new site my-site
-Congratulations! Your new Hugo site was created in /home/test/hugo-release/my-site.
-```
-#### Once you move to the newly created directory, the following should be the end state:
-```
-test@test:~$ cd /home/test/hugo-release/my-site
-test@test:~/hugo-release/my-site$ ls -la
-total 44
-drwxrwxr-x 10 test test 4096 srp  9 21:17 .
-drwxrwxr-x  3 test test 4096 srp  9 21:17 ..
-drwxrwxr-x  2 test test 4096 srp  9 21:17 archetypes
-drwxrwxr-x  2 test test 4096 srp  9 21:17 assets
-drwxrwxr-x  2 test test 4096 srp  9 21:17 content
-drwxrwxr-x  2 test test 4096 srp  9 21:17 data
--rw-rw-r--  1 test test   83 srp  9 21:17 hugo.toml
-drwxrwxr-x  2 test test 4096 srp  9 21:17 i18n
-drwxrwxr-x  2 test test 4096 srp  9 21:17 layouts
-drwxrwxr-x  2 test test 4096 srp  9 21:17 static
-drwxrwxr-x  2 test test 4096 srp  9 21:17 themes
-test@test:~/hugo-release/my-site$ tree
-.
-├── archetypes
-│   └── default.md
-├── assets
-├── content
-└── posts
-├── data
-├── hugo.toml
-├── i18n
-├── layouts
-├── static
-└── themes
+In order to use the latest extended version (v0.165.0), which is newer than the repository one -and also not-the-standard-, the .deb file must be downloaded from the [official website](https://github.com/gohugoio/hugo/releases/tag/v0.165.0).
 
-8 directories, 2 files
+**File name**: hugo_extended_0.165.0_linux-amd64.deb
 ```
-Now that you have your skeleton of a website, the contents from your blog can be moved into the "content" folder. The following is an example of my structure:
+test@ubuntu-vm:~/Downloads$ ls -la
+total 22076
+drwxr-xr-x  2 test test     4096 Aug 26 18:34 .
+drwxr-x--- 16 test test     4096 Aug 26 17:37 ..
+-rw-rw-r--  1 test test 22594736 Aug 26 17:44 hugo_extended_0.165.0_linux-amd64.deb
 ```
-test@test:~/hugo-release/my-site$ tree -L 5
+
+#### Installing Hugo extended version via dpkg (from .deb file):
+```
+test@ubuntu-vm:~/Downloads$ sudo dpkg -i hugo_extended_0.165.0_linux-amd64.deb 
+Selecting previously unselected package hugo.
+(Reading database… 185569 files and directories currently installed.)
+Preparing to unpack hugo_extended_0.165.0_linux-amd64.deb…
+Unpacking hugo (0.165.0)…
+Setting up hugo (0.165.0)…
+```
+#### Verifying Hugo version after installing via dpkg (from .deb file)
+```
+test@ubuntu-vm:/home$ hugo version
+hugo v0.165.0-76a5e1880ab46688155b02e99bab9be2a6134492+extended linux/amd64 BuildDate=2026-08-12T14:26:28Z VendorInfo=gohugoio
+```
+**Note**: There is no need to install Go/go-lang as the .deb file has all you need to run Hugo.
+
+### Re-setting up the stage
+
+At the end of the previous post the structure of the directory looked like this:
+```
+test@ubuntu-vm:/mnt/hugo-release/my-site$ tree -L 5
 .
 ├── archetypes
 │   └── default.md
@@ -210,19 +172,279 @@ test@test:~/hugo-release/my-site$ tree -L 5
 │           │   └── cisco-sd-wan-data-policies
 │           └── 03
 │               └── cisco-sd-wan-service-side-nat
+├── custom
+├── data
+├── hugo.toml
+├── i18n
+├── layouts
+├── pages
+│   ├── about
+│   │   └── index.md
+│   └── contact
+│       └── index.md
+├── static
+└── themes
+
+47 directories, 4 files
+```
+#### By now you should have a markdown skeleton to start. What follows is to understand the directory structure/hierarchy and slowly start running it locally.
+
+As a reference, find here [HUGO's official documentation explaining the directory structure](https://gohugo.io/getting-started/directory-structure/).
+
+#### Summary of the important folders:
+
+If you were to run the following command in your computer
+```
+test@ubuntu-vm:/mnt/hugo-release$ hugo new project my-site2
+```
+The output would be:
+```
+Congratulations! Your new Hugo project was created in /mnt/hugo-release/my-site2.
+
+Just a few more steps...
+
+1. Change the current directory to /mnt/hugo-release/my-site2.
+2. Create or install a theme:
+   - Create a new theme with the command "hugo new theme <THEMENAME>"
+   - Or, install a theme from https://themes.gohugo.io/
+3. Edit hugo.toml, setting the "theme" property to the theme name.
+4. Create new content with the command "hugo new content <SECTIONNAME>/<FILENAME>.<FORMAT>".
+5. Start the embedded web server with the command "hugo server --buildDrafts".
+
+See documentation at https://gohugo.io/.
+```
+Along with the instructions provided, this is the minimal directory structure you'd get, and whats needed to run a website in Hugo. Below is the summary of what these folders *may* contain:
+```
+my-site/
+├── archetypes/      <-- post templates (optional)
+│   └── default.md
+├── assets/          <-- resources such as images, CSS, Sass, JavaScript, and TypeScript
+├── content/         <-- posts
+├── data/            <-- data files that augment content, configuration, localization, and navigation
+├── i18n/            <-- translation tables for multilingual projects (optional)
+├── layouts/         <-- templates to transform content, data, and resources (optional - your theme may have its own layouts)
+├── public/          <-- automatically created when you build/run your project
+├── resources/       <-- automatically created when you build/run your project
+├── static/          <-- static assets like fav.ico, robots.txt and files used to verify ownership
+├── themes/          <-- themes for your website (you can have many if you want)
+└── hugo.toml        <-- project configuration (a file, not a folder)
+```
+**Note**: *Public* and *Resources* are folders that get created when building the project, they dont appear when creating the project via the command above. They were mentioned for your awareness.
+
+**Note 2**: *Themes* contains an entire subdirectory structure, generally (and at least to start and test), you can [download a theme](https://themes.gohugo.io/) and paste it in the folder. To use a template, the project configuration file is modified (hugo.toml) to reference it, and upon bulilding, hugo will look into the *themes* folder to use the one referenced.
+
+**Note 2 part 2**: There are much more complex implementations (like modules), but thats something beyond the scope of this post (which doesn't necessarily mean it may not come later! :D), and Hugo's documentation will certainly explain better.
+
+### Running a simple website to test hugo
+
+Before you run your website, you need a theme, lets copy a quick one to test it all. We will start slow and small. Baby steps!
+
+Clone [this theme](https://themes.gohugo.io/themes/hugo-theme-hello-friend-ng/) in your *themes* folder:
+```
+test@ubuntu-vm:/mnt/hugo-release$ cd my-site2
+test@ubuntu-vm:/mnt/hugo-release/my-site2$ git clone https://github.com/rhazdon/hugo-theme-hello-friend-ng.git themes/hello-friend-ng
+Cloning into 'themes/hello-friend-ng'...
+remote: Enumerating objects: 3964, done.
+remote: Counting objects: 100% (72/72), done.
+remote: Compressing objects: 100% (34/34), done.
+remote: Total 3964 (delta 44), reused 38 (delta 38), pack-reused 3892 (from 2)
+Receiving objects: 100% (3964/3964), 9.94 MiB | 5.28 MiB/s, done.
+Resolving deltas: 100% (2176/2176), done.
+
+test@ubuntu-vm:/mnt/hugo-release/my-site2$ tree -L 3
+.
+├── archetypes
+│   └── default.md
+├── assets
+├── content
 ├── data
 ├── hugo.toml
 ├── i18n
 ├── layouts
 ├── static
 └── themes
-```
-#### After following the steps above you should have a markdown skeleton to start. What follows is to understand the directory structure/hierarchy and slowly start running it locally.
+    └── hello-friend-ng
+        ├── archetypes
+        ├── assets
+        ├── CONTRIBUTING.md
+        ├── data
+        ├── docs
+        ├── exampleSite
+        ├── i18n
+        ├── images
+        ├── layouts
+        ├── LICENSE.md
+        ├── README.md
+        ├── static
+        └── theme.toml
 
-We will continue exploring HUGO in the next blog posts.
+19 directories, 6 files
+```
+Now, copy the configuration suggested by the theme instructions (more details will come)
+```
+test@ubuntu-vm:/mnt/hugo-release/my-site2$ nano hugo.toml
+
+baseurl      = "localhost"
+title        = "My Blog"
+language.locale = "en-us"
+theme        = "hello-friend-ng"
+pagination.pagerSize     = 10
+
+[params]
+  dateform        = "Jan 2, 2006"
+  dateformShort   = "Jan 2"
+  dateformNum     = "2006-01-02"
+  dateformNumTime = "2006-01-02 15:04"
+
+  # Subtitle for home
+  homeSubtitle = "A simple and beautiful blog"
+
+  # Set disableReadOtherPosts to true in order to hide the links to other posts.
+  disableReadOtherPosts = false
+
+  # Enable sharing buttons, if you like
+  enableSharingButtons = true
+  
+  # Show a global language switcher in the navigation bar
+  enableGlobalLanguageMenu = true
+
+  # Metadata mostly used in document's head
+  description = "My new homepage or blog"
+  keywords = "homepage, blog"
+  images = [""]
+
+[taxonomies]
+    category = "blog"
+    tag      = "tags"
+    series   = "series"
+
+[languages]
+  [languages.en]
+    title = "Hello Friend NG"
+    keywords = ""
+    copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
+    readOtherPosts = "Read other posts"
+
+  [languages.en.params]
+    subtitle  = "A simple theme for Hugo"
+
+    [languages.en.params.logo]
+      logoText = "hello friend ng"
+      logoHomeLink = "/"
+    # or
+    #
+    # path = "/img/your-example-logo.svg"
+    # alt = "Your example logo alt text"
+
+  # And you can even create generic menu
+  [[menu.main]]
+    identifier = "blog"
+    name       = "Blog"
+    url        = "/posts"
+
+  # and submenus
+  [[menu.main]]
+    identifier  = "parent"
+    name        = "Parent"
+    url         = "/parent"
+    hasChildren = true
+
+  [[menu.main]]
+    identifier  = "child"
+    name        = "Child"
+    url         = "/parent/child"
+    parent      = "parent"
+```
+And lastly, lets create a post to have something there:
+```
+test@ubuntu-vm:/mnt/hugo-release/my-site2$ hugo new content content/posts/my-first-post.md
+Content "/mnt/hugo-release/my-site2/content/posts/my-first-post.md" created
+```
+The the file created will have the following content (date will differ):
+```
+test@ubuntu-vm:/mnt/hugo-release/my-site2$ cat content/posts/my-first-post.md
+---
+title: "My First Post"
+date: 2026-08-27T10:34:32+02:00
+draft: true
+toc: false
+images:
+tags:
+  - untagged
+---
+```
+That is called [*frontmatter*](https://gohugo.io/content-management/front-matter/) and it defines the information that identifies your post. Every post must have it.
+Below the "---" or "+++" (either works) your content will begin, the file is your canvas and markdown your format.
+
+Lets add content to the file (below the "---"):
+```
+#This is a title/heading
+##This is a subtitle
+###This is an even smaller title/heading
+#### And we can go on and on
+##### Until we get to the lowest level of hierarchy
+###### Which is this one (6)
+
+This is **bold** text, this is *emphasized* text, this is ~~strikethrough~~ text. and this is _underlined_ text.
+
+These are unordered bullets:
+- Goes
+- Potato
+- Here
+- A     
+
+These are ordered bullets:
+1. Here 
+2. Goes
+3. A
+4. Potato
+
+> This is a blockquote
+
+What a great way to start! :D
+```
+## And finally: RUN IT!
+```
+test@ubuntu-vm:/mnt/hugo-release/my-site2$ hugo server -D
+Watching for changes in /mnt/hugo-release/my-site2/archetypes, /mnt/hugo-release/my-site2/assets, /mnt/hugo-release/my-site2/content/posts, /mnt/hugo-release/my-site2/data, /mnt/hugo-release/my-site2/i18n, /mnt/hugo-release/my-site2/layouts, /mnt/hugo-release/my-site2/static, /mnt/hugo-release/my-site2/themes/hello-friend-ng/archetypes, /mnt/hugo-release/my-site2/themes/hello-friend-ng/assets/{js,scss}, /mnt/hugo-release/my-site2/themes/hello-friend-ng/data, ... and 3 more
+Watching for config changes in /mnt/hugo-release/my-site2/hugo.toml
+Start building sites … 
+hugo v0.165.0-76a5e1880ab46688155b02e99bab9be2a6134492+extended linux/amd64 BuildDate=2026-08-12T14:26:28Z VendorInfo=gohugoio
+
+WARN  deprecated: css.Sass: libsass was deprecated in Hugo v0.153.0 and will be removed in a future release. Use dartsass instead. See https://gohugo.io/functions/css/sass/#dart-sass
+WARN  deprecated: .Site.LanguageCode was deprecated in Hugo v0.158.0 and will be removed in a future release. Use .Site.Language.Locale instead.
+
+                  │ EN  
+──────────────────┼─────
+ Pages            │  15 
+ Paginator pages  │   0 
+ Non-page files   │   0 
+ Static files     │ 547 
+ Processed images │   0 
+ Aliases          │   5 
+ Cleaned          │   0 
+
+Built in 453 ms
+Environment: "development"
+Serving pages from disk
+Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+Web Server is available at //localhost:1313/ (bind address 127.0.0.1) 
+Press Ctrl+C to stop
+```
+**Note 3**: ignore the warnings.
+
+Open your browser and navigate to http://localhost:1313/posts/ and click your first blog post:
+
+![](images/first-blog-post.png)
+
+![](images/first-blog-post2.png)
+
+Congratulations, you have made your first blog post with HUGO!
+
+We will continue exploring HUGO in the next posts.
 
 Thank you for reading!
 
 # References and further reading:
 - [HUGO - official documentation](https://gohugo.io/documentation/)
-- [HUGO - additional learning resources](https://gohugo.io/getting-started/external-learning-resources/)
+- [Markdown Guide - Hugo Markdown Support](https://www.markdownguide.org/tools/hugo/)
