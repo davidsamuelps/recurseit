@@ -1,8 +1,8 @@
 ---
-title: "Migrating from WordPress to HUGO - Part 5"
-slug: "migrating-from-wordpress-to-hugo-part-5"
-date: "2026-09-XX"
-draft: true
+title: "Migrating from WordPress to HUGO - Part 4.5"
+slug: "migrating-from-wordpress-to-hugo-part-4.5"
+date: "2026-08-27"
+#draft: true
 #categories: 
 #  - "ccnp"
 tags: 
