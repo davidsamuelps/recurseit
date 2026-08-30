@@ -13,7 +13,9 @@ coverImage: "recurseit3.jpg"
 #  extensions = [“noEmptyLineBeforeBlock”]
 ---
 
-Heeello everyone! Again, sorry for the late post, I am trying to do them more often (_sometimes it's quite challenging)_. GRE Saga is on hold, i am looking for actors and proper scenes to make the history interesting. So, castings are taking place! If you have suggestions about a new topic or whatever you think can help the blog, click **[here](https://www.linkedin.com/in/davidsamuelps/)** and send me a message! :D
+Heeello everyone! Again, sorry for the late post, I am trying to do them more often (_sometimes it's quite challenging)_.
+
+GRE Saga is on hold, i am looking for actors and proper scenes to make the history interesting. So, castings are taking place! If you have suggestions about a new topic or whatever you think can help the blog, click **[here](https://www.linkedin.com/in/davidsamuelps/)** and send me a message! :D
 
 Today I will introduce you one of the most basic and filtering techniques that you will ever find out there. You will learn that ACLs are the very foundation of filtering techniques and a huge support for routing protocols and other deep stuff that require selective matching. Simple doesn't mean useless, actually, sometimes the challenge is to do simple things in an excellent and flawless way ;)
 

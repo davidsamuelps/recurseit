@@ -14,7 +14,9 @@ tags:
 coverImage: "recurseit3.jpg"
 ---
 
-Here we are again, people! This time, i decided to write a post about IPv6, being this protocol part of our present and future _(even past, because it is being used since years ago)_. As most of you must have IPv4 _(because IPv6 adoption is going SO slow)_, maybe IPv6 could be an alien protocol for you. Some people say its difficult, so, i want to explain a little bit here to make it clear. I do not think its difficult, i think it is different :) If you are used to IPv4, which is likely, then it can be shocking at the beginning, but,we can make cool examples here, right? :D
+Here we are again, people! This time, i decided to write a post about IPv6, being this protocol part of our present and future _(even past, because it is being used since years ago)_.
+
+As most of you must have IPv4 _(because IPv6 adoption is going SO slow)_, maybe IPv6 could be an alien protocol for you. Some people say its difficult, so, i want to explain a little bit here to make it clear. I do not think its difficult, i think it is different :) If you are used to IPv4, which is likely, then it can be shocking at the beginning, but,we can make cool examples here, right? :D
 
 # **The facts**
 

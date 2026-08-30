@@ -17,7 +17,9 @@ tags:
 
 All cadets salute the GRE tunnels! :D
 
-Today we will talk a little about GRE tunnels, a very useful protocol that can help you a lot. As you may now, its present in CCNP R&S blueprint and CCNA v2/v3 as well blueprint _(check **[here](https://recurseit.wordpress.com/2016/05/28/ccna-refresh/)** for more information about [V2](https://learningnetwork.cisco.com/community/certifications/ccna/ccna_exam_v2/exam-topics) to [v3](https://learningnetwork.cisco.com/community/certifications/ccna/ccna-exam/exam-topics) changes)_. But, what are the GRE tunnels? how can we use them? why is the sky blue? did you know that the otters sleep hugging between them? (Otterly lovely!)
+Today we will talk a little about GRE tunnels, a very useful protocol that can help you a lot.
+
+As you may now, its present in CCNP R&S blueprint and CCNA v2/v3 as well blueprint _(check **[here](https://recurseit.wordpress.com/2016/05/28/ccna-refresh/)** for more information about [V2](https://learningnetwork.cisco.com/community/certifications/ccna/ccna_exam_v2/exam-topics) to [v3](https://learningnetwork.cisco.com/community/certifications/ccna/ccna-exam/exam-topics) changes)_. But, what are the GRE tunnels? how can we use them? why is the sky blue? did you know that the otters sleep hugging between them? (Otterly lovely!)
 
 We will find the answers to those questions here! :D (I also want to know why the sky is blue)
 

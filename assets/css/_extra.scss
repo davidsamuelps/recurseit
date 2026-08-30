@@ -10,8 +10,6 @@ pre code {
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Links — hover stays in the green family instead of jumping to white.
-// #7bf0ae = same hue as $primary-color, 18% lighter, contrast 8.0 on dark bg.
-// Underline added for colorblind accessibility (shape, not just colour).
 // ─────────────────────────────────────────────────────────────────────────────
 
 a:hover {
@@ -21,8 +19,6 @@ a:hover {
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Images — fix aspect ratio distortion.
-// Theme only sets max-width; without height: auto, explicit width/height
-// attributes from the render-image hook break the aspect ratio.
 // ─────────────────────────────────────────────────────────────────────────────
 
 img {
@@ -42,43 +38,33 @@ figure {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Wide-screen centering via CSS Grid.
+// Wide-screen centering.
 //
-// The theme uses position: fixed for the sidebar, which anchors it to the
-// viewport and makes true centering impossible without changing the layout
-// model. At ≥85rem (1360px), we switch to a two-column grid on the body,
-// which lets justify-content: center properly center the 85rem block.
-// The sidebar switches from fixed to sticky — it sticks to the top of the
-// viewport on scroll, which is indistinguishable from fixed on typical
-// blog post lengths.
+// Sidebar stays exactly as the theme defines it: position fixed, left: 0.
+// Only the content area moves. The content block (max-width: 65rem) is
+// centered in the full viewport using:
+//   margin-left = max(20rem, 50vw - 32.5rem)
 //
-// Below 85rem: the theme's own layout (stacked on mobile, fixed sidebar
-// above 940px) is completely unaffected.
+// 50vw - 32.5rem = (100vw - 65rem) / 2  →  the left edge needed to center
+// a 65rem block in the viewport.
+//
+// The max() ensures the content never slides under the sidebar:
+// - Below 105rem (1680px): 50vw - 32.5rem < 20rem, so 20rem wins → no change
+// - Above 105rem:          formula > 20rem, centering kicks in
+//
+// At 90% zoom on 1920px (~133rem viewport):
+//   margin-left = 50(133) - 32.5 = 34rem
+//   content: 34rem → 99rem  |  right dead space: 34rem  ✓ symmetric
 // ─────────────────────────────────────────────────────────────────────────────
 
-@media (min-width: 85rem) {
-  body {
-    display: grid;
-    grid-template-columns: 20rem minmax(0, 65rem);
-    justify-content: center;
-    align-items: stretch;
-  }
-
-  .app-header {
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    overflow-y: auto;
-    // width is now controlled by the grid column — no explicit width needed
-  }
-
+@media (min-width: 105rem) {
   .app-container {
-    margin-left: 0; // grid handles positioning; override the theme's margin-left: 20rem
+    margin-left: calc(50vw - 32.5rem);
   }
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Post list summaries (#5)
+// Post list summaries
 // ─────────────────────────────────────────────────────────────────────────────
 
 .posts-list-item-summary {
@@ -86,10 +72,15 @@ figure {
   font-size: 0.9em;
   color: $light-color;
   line-height: 1.5;
+  // Hard cap at 2 lines regardless of summary length
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// figcaption — render-image hook and {{< figure >}} shortcode (#4, #26)
+// figcaption
 // ─────────────────────────────────────────────────────────────────────────────
 
 figcaption {
@@ -148,7 +139,7 @@ figcaption {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// YouTube embed wrapper (#22)
+// YouTube embed wrapper
 // ─────────────────────────────────────────────────────────────────────────────
 
 .youtube-embed {

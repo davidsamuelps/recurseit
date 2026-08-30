@@ -14,7 +14,9 @@ tags:
 
 Hello all,
 
-Recently, I have attempted and passed the Cisco CCNP Enterprise Infrastructure SD-WAN concentration exam ([300-415 ENSDWI](https://www.cisco.com/c/en/us/training-events/training-certifications/exams/current-list/ensdwi-300-415.html)). Given the popularity of the [post](https://www.linkedin.com/posts/davidsamuelps_sdwan-activity-6637632817947783168-mmQ0), I have decided to put together a list of recommended resources. Please note that what worked for me, might or might not work for you, its only my personal journey. Therefore, I don't claim to know all the resources out there or even have consumed all of them.
+Recently, I have attempted and passed the Cisco CCNP Enterprise Infrastructure SD-WAN concentration exam ([300-415 ENSDWI](https://www.cisco.com/c/en/us/training-events/training-certifications/exams/current-list/ensdwi-300-415.html)).
+
+Given the popularity of the [post](https://www.linkedin.com/posts/davidsamuelps_sdwan-activity-6637632817947783168-mmQ0), I have decided to put together a list of recommended resources. Please note that what worked for me, might or might not work for you, its only my personal journey. Therefore, I don't claim to know all the resources out there or even have consumed all of them.
 
 **First things first:** there is no way that you will only read, memorize and pass the exam, it requires understanding of the solution and hand-on experience. Also, as a purely politeness-driven approach, please **refrain from asking people for dumps over LinkedIn** (or any other platform).
 

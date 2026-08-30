@@ -9,7 +9,7 @@ summarylength = 15
 theme = ["m10c-27-02-2024"]
 
 [pagination]
-  pagerSize = 8
+  pagerSize = 4
 
 
 

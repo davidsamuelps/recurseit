@@ -12,7 +12,9 @@ tags:
 
 ---
 
-As every movie saga, like Terminator, Star Wars, The Naked gun, Shrek or Resident Evil _(loved that one)_, GRE tunnels are going to have an interesting and cinematographic role here at our blog. Maybe not re-killing zombies _(yes, killing them again!)_ or saving a princes making the dragon eat a dwarf king _(that escalated quicky)_, but with several post about it. Part of this was a recommendation from my dear friend Micheline Murphy (**[@MichyfishMurphy](https://twitter.com/MichyfishMurphy?lang=cs)**), she is a dedicated student and also a wonderful person _(follow her, i command you!)_. You can be relaxed, **no one** is losing a hand in this saga (**i did!** _Shh, Luke! no one is talking about you!)._
+As every movie saga, like Terminator, Star Wars, The Naked gun, Shrek or Resident Evil _(loved that one)_, GRE tunnels are going to have an interesting and cinematographic role here at our blog.
+
+Maybe not re-killing zombies _(yes, killing them again!)_ or saving a princes making the dragon eat a dwarf king _(that escalated quicky)_, but with several post about it. Part of this was a recommendation from my dear friend Micheline Murphy (**[@MichyfishMurphy](https://twitter.com/MichyfishMurphy?lang=cs)**), she is a dedicated student and also a wonderful person _(follow her, i command you!)_. You can be relaxed, **no one** is losing a hand in this saga (**i did!** _Shh, Luke! no one is talking about you!)._
 
 In the beginning of the GRE saga we made a simple lab with two routers and a tunnel between them. Kinda easy, huh? This time, we are going to make something more interesting. Not the same as destroying the death star, but we will learn something cool! :D
 
