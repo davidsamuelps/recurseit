@@ -5,7 +5,9 @@ categories:
   - "news"
 ---
 
-Last year Cisco [announced](https://newsroom.cisco.com/press-release-content?type=webcontent&articleId=2039386) their intent to move away from purchasing merchant silicon and start building their own chips. Quite a surprise for many, as the SDN traits are to decouple software from hardware, relying heavily on software, and using commodity hardware. This begs the question: in which area/vertical would this be implemented first? Well, all points to Service provider! :D
+Last year Cisco [announced](https://newsroom.cisco.com/press-release-content?type=webcontent&articleId=2039386) their intent to move away from purchasing merchant silicon and start building their own chips.
+
+Quite a surprise for many, as the SDN traits are to decouple software from hardware, relying heavily on software, and using commodity hardware. This begs the question: in which area/vertical would this be implemented first? Well, all points to Service provider! :D
 
 # The Brain
 
