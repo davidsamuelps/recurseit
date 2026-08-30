@@ -3,15 +3,15 @@ locale = 'en-us'
 title = "RecurseIT"
 enableRobotsTXT = true
 enableGitInfo   = true
+summarylength = 15
 
 #THEME#
 theme = ["m10c-27-02-2024"]
 
-#MODULES GO HERE
-
-
 [pagination]
   pagerSize = 8
+
+
 
 [menu]
   [[menu.main]]

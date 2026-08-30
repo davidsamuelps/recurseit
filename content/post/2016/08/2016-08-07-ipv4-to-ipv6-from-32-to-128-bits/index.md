@@ -3,35 +3,14 @@ title: "IPv4 to IPv6: from 32 to 128 bits"
 date: "2016-08-07"
 categories: 
   - "ccna"
-tags: 
-  - "128"
-  - "32"
-  - "address"
-  - "adoption"
-  - "bit"
-  - "bits"
-  - "colon"
-  - "compress"
-  - "compresses"
-  - "exhaustion"
-  - "format"
-  - "header"
-  - "hextet"
-  - "ipsec"
-  - "ipv4"
-  - "ipv6"
-  - "nat"
-  - "networking"
-  - "networks"
-  - "new"
-  - "octec"
-  - "packet"
-  - "private"
-  - "public"
-  - "reachable"
-  - "rules"
-  - "security"
-  - "transition"
+tags:
+  - ipv6
+  - ipsec
+  - ipv4
+  - ipv6
+  - nat
+  - networks
+  - security
 coverImage: "recurseit3.jpg"
 ---
 

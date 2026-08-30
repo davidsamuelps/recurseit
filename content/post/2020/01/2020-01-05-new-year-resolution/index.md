@@ -3,21 +3,12 @@ title: "New year resolution!"
 date: "2020-01-05"
 categories: 
   - "news"
-tags: 
-  - "ccde"
-  - "ccie"
-  - "change"
-  - "content"
-  - "design"
-  - "learning"
-  - "linux"
-  - "new"
-  - "podcast"
-  - "python"
-  - "resolution"
-  - "sdwan"
-  - "webcast"
-  - "year"
+tags:
+  - ccie
+  - design
+  - linux
+  - sdwan
+
 ---
 
 Hello everybody!

@@ -3,19 +3,14 @@ title: "Cisco SD-WAN Service Side NAT"
 date: "2021-03-05"
 categories: 
   - "ccnp"
-tags: 
-  - "data"
-  - "nat"
-  - "policy"
-  - "prefix"
-  - "routing"
-  - "sd-wan"
-  - "sdwan"
-  - "service-side"
-  - "static"
-  - "static-nat"
-  - "traffic"
-  - "viptela"
+tags:
+  - nat
+  - routing
+  - sdwan
+  - sdwan
+  - nat
+  - sdwan
+
 ---
 
 Among Cisco SD-WAN's tools to steer or influence traffic across the overlay, the data policies are the ones providing the highest flexibility. For a primer about SD-WAN Data Policies, please refer to this article: [Cisco SD-WAN Data Policies](https://recurseit.com/post/2021/01/2021-01-27-cisco-sd-wan-data-policies/).

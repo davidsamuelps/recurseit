@@ -5,17 +5,17 @@ date: "2025-03-14"
 #draft: true
 #categories: 
 #  - "ccnp"
-tags: 
-  - "hugo"
-  - "wordpress"
-  - "cloudflare"
-  - "developer"
-  - "html"
-  - "markdown"
-  - "git"
-  - "github"
-  - "code"
-  - "repository"
+tags:
+  - hugo
+  - wordpress
+  - cloudflare
+  - html
+  - markdown
+  - git
+  - github
+  - code
+  - repository
+
 ---
 
 This blog is the first part of several (number to be defined) describing the process and steps I took to migrate my blog from Wordpress to CloudFlare pages, using HUGO and Github.

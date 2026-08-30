@@ -5,16 +5,15 @@ date: "2026-09-04"
 draft: true
 #categories: 
 #  - "ccnp"
-tags: 
-  - "hugo"
-  - "wordpress"
-  - "markdown"
-  - "linux"
-  - "git"
-  - "github"
-  - "repository"
-  - "commit"
-  - "push"
+tags:
+  - hugo
+  - wordpress
+  - markdown
+  - linux
+  - git
+  - github
+  - repository
+
 ---
 
 In the [previous post](https://recurseit.com/post/2026/migrating-from-wordpress-to-hugo-part-4.5/) we spoke about the fourth step of the migration process. In this post we will continue expanding on it (in bold). Let us bring those steps back in the section below:

@@ -4,26 +4,15 @@ date: "2016-06-04"
 categories: 
   - "ccna"
   - "ccnp"
-tags: 
-  - "broadcast"
-  - "cisco"
-  - "encapsulation"
-  - "gre"
-  - "header"
-  - "inside"
-  - "ip"
-  - "ipsec"
-  - "lab"
-  - "matryoshka"
-  - "multicast"
-  - "otters"
-  - "payload"
-  - "security"
-  - "standard"
-  - "tunnel"
-  - "tunnels"
-  - "unicast"
-  - "virtual"
+tags:
+  - cisco
+  - gre
+  - ipsec
+  - multicast
+  - security
+  - tunnel
+  - gre
+
 ---
 
 All cadets salute the GRE tunnels! :D

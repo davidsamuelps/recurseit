@@ -1,0 +1,10 @@
+{{ define "main" }}
+  <div class="error-404">
+    <h1 class="error-404-title">404</h1>
+    <p>This page doesn't exist.</p>
+    <p><a href="{{ "/" | relURL }}">← Back home</a></p>
+    {{ with site.GetPage "/tags" }}
+      <p>Or browse by <a href="{{ .RelPermalink }}">tag</a>.</p>
+    {{ end }}
+  </div>
+{{ end }}

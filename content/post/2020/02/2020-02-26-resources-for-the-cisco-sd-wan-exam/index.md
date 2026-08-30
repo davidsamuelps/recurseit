@@ -3,17 +3,13 @@ title: "Resources for the Cisco SD-WAN exam"
 date: "2020-02-26"
 categories: 
   - "ccnp"
-tags: 
-  - "cisco"
-  - "concentration"
-  - "cvd"
-  - "deployment"
-  - "exam"
-  - "resources"
-  - "sdn"
-  - "sdwan"
-  - "specialization"
-  - "viptela"
+tags:
+  - cisco
+  - resources
+  - sdn
+  - sdwan
+  - sdwan
+
 ---
 
 Hello all,

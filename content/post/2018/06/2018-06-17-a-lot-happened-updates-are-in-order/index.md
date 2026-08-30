@@ -3,25 +3,11 @@ title: "A lot happened - Updates are in order!"
 date: "2018-06-17"
 categories: 
   - "news"
-tags: 
-  - "blog"
-  - "ccde"
-  - "ccie"
-  - "certification"
-  - "certified"
-  - "ciscochampion"
-  - "cleur"
-  - "clus"
-  - "content"
-  - "design"
-  - "exams"
-  - "friend"
-  - "friends"
-  - "group"
-  - "networking"
-  - "spanish"
-  - "study"
-  - "translation"
+tags:
+  - ccie
+  - ciscocert
+  - design
+
 ---
 
 Hello everyone

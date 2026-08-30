@@ -3,43 +3,11 @@ title: "ACLs: Filtering Insights"
 date: "2016-07-23"
 categories: 
   - "ccna"
-tags: 
-  - "access"
-  - "ace"
-  - "acl"
-  - "acls"
-  - "action"
-  - "address"
-  - "bodyguard"
-  - "cisco"
-  - "close"
-  - "control"
-  - "deny"
-  - "destination"
-  - "direction"
-  - "extended"
-  - "filter"
-  - "filtering"
-  - "implicit"
-  - "inbound"
-  - "interface"
-  - "ip"
-  - "list"
-  - "lists"
-  - "log"
-  - "mask"
-  - "match"
-  - "name"
-  - "named"
-  - "number"
-  - "outbound"
-  - "permit"
-  - "protocol"
-  - "router"
-  - "sequence"
-  - "source"
-  - "standard"
-  - "wildcard"
+tags:
+  - acl
+  - acl
+  - cisco
+  - routing
 coverImage: "recurseit3.jpg"
 #blackfriday:
 #  extensions = [“noEmptyLineBeforeBlock”]

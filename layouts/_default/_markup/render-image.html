@@ -1,0 +1,15 @@
+{{- $src := .Destination -}}
+{{- $alt := .Text -}}
+{{- $caption := .Title -}}
+{{- $img := .Page.Resources.GetMatch $src -}}
+<figure>
+  {{- if $img }}
+  <img src="{{ $img.RelPermalink }}"
+       alt="{{ $alt }}"
+       width="{{ $img.Width }}"
+       height="{{ $img.Height }}" />
+  {{- else }}
+  <img src="{{ $src | safeURL }}" alt="{{ $alt }}" />
+  {{- end }}
+  {{- with $caption }}<figcaption>{{ . }}</figcaption>{{ end }}
+</figure>

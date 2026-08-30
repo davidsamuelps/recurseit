@@ -4,6 +4,7 @@
 /public/
 /resources/_gen/
 .hugo_build.lock
+/scripts
 
 # OS/editor noise
 .DS_Store

@@ -1,0 +1,49 @@
+{{ define "main" }}
+  <article>
+    <h1 class="post-title">{{ .Title }}</h1>
+    <div class="post-meta">
+      {{ with .PublishDate }}
+      <div>
+        {{ partial "icon.html" (dict "ctx" $ "name" "calendar") }}
+        {{ .Format "Jan 2, 2006" }}
+      </div>
+      {{ end }}
+      {{ if .ReadingTime }}
+      <div>
+        {{ partial "icon.html" (dict "ctx" $ "name" "clock") }}
+        {{ .ReadingTime }} min read
+      </div>
+      {{ end }}
+      {{ with .Params.tags }}
+      <div>
+        {{ partial "icon.html" (dict "ctx" $ "name" "tag") }}
+        {{ range . -}}
+          <a class="tag" href="{{ ($.Site.GetPage (printf "/tags/%s" .)) | relURL }}">{{ . }}</a>
+        {{- end }}
+      </div>
+      {{ end }}
+    </div>
+    <div class="post-content">
+      {{ .Content }}
+    </div>
+  </article>
+
+  <nav class="post-nav">
+    {{/* PrevInSection = chronologically older (earlier date) */}}
+    {{ with .PrevInSection }}
+    <a class="post-nav-item post-nav-older" href="{{ .RelPermalink }}">
+      <span class="post-nav-label">← Older</span>
+      <span class="post-nav-title">{{ .Title }}</span>
+    </a>
+    {{ end }}
+    {{/* NextInSection = chronologically newer (later date) */}}
+    {{ with .NextInSection }}
+    <a class="post-nav-item post-nav-newer" href="{{ .RelPermalink }}">
+      <span class="post-nav-label">Newer →</span>
+      <span class="post-nav-title">{{ .Title }}</span>
+    </a>
+    {{ end }}
+  </nav>
+
+  {{ template "_internal/disqus.html" . }}
+{{ end }}

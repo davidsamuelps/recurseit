@@ -5,21 +5,21 @@ date: "2026-08-27"
 #draft: true
 #categories: 
 #  - "ccnp"
-tags: 
-  - "hugo"
-  - "wordpress"
-  - "markdown"
-  - "linux"
-  - "git"
-  - "github"
-  - "repository"
-  - "commit"
-  - "push"
+tags:
+  - hugo
+  - wordpress
+  - markdown
+  - linux
+  - git
+  - github
+  - repository
+
 ---
 
 Hello all!
+It's been a while since my last post. I intend to continue with the blog post series (apologies for the delay), and for that, level-setting is paramount.
 
-It's been a while since my last post. I intend to continue with the blog post series (apologies for the delay), and for that, level-setting is paramount. Since the last post many things have changed (mostly about versioning), so I will resume where the previous post left off, with the required clarifications in this blog.
+Since the last post many things have changed (mostly about versioning), so I will resume where the previous post left off, with the required clarifications in this blog.
 
 In the [previous post](https://recurseit.com/post/2025/migrating-from-wordpress-to-hugo-part-4/) we spoke about the fourth step of the migration process. In this post we will continue expanding on it (in bold). Let us bring those steps back in the section below:
 

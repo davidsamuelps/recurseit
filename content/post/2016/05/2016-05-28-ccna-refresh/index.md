@@ -4,35 +4,14 @@ date: "2016-05-28"
 categories: 
   - "ccna"
   - "news"
-tags: 
-  - "100-101"
-  - "100-105"
-  - "200-101"
-  - "200-105"
-  - "200-120"
-  - "200-125"
-  - "ap"
-  - "ccent"
-  - "cdp"
-  - "certify"
-  - "deadline"
-  - "dhcp"
-  - "dns"
-  - "exams"
-  - "firewall"
-  - "gre"
-  - "icnd1"
-  - "icnd2"
-  - "ipv6"
-  - "lldp"
-  - "new"
-  - "ocg"
-  - "qos"
-  - "rs"
-  - "refresh"
-  - "rip"
-  - "vtp"
-  - "wlc"
+tags:
+  - firewall
+  - gre
+  - ccna
+  - ipv6
+  - qos
+  - wireless
+
 ---
 
 As you maybe are aware of, Cisco announced on May 17th an interesting change in its Cisco Certified Entry Networking Technician (CCENT) and Cisco Certified Network Associate (CCNA) Routing and Switching certifications. As always happens with this announcements, there are changes on the exam numbers and their blueprint. I will let you know in a quick synthesis a couple of things here and we can make a deep dive in a next post :)

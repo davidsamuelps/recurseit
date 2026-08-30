@@ -4,41 +4,16 @@ date: "2016-11-28"
 categories: 
   - "ccnp"
   - "news"
-tags: 
-  - "300-320"
-  - "aci"
-  - "address"
-  - "arch"
-  - "ccde"
-  - "ccdp"
-  - "center"
-  - "certification"
-  - "cisco"
-  - "ciscocert"
-  - "cln"
-  - "cvd"
-  - "data"
-  - "dc"
-  - "design"
-  - "elopes01"
-  - "exam"
-  - "feedback"
-  - "forwarding"
-  - "guide"
-  - "is-is"
-  - "isis"
-  - "learning"
-  - "mindset"
-  - "mpls"
-  - "network"
-  - "ocg"
-  - "official"
-  - "ospf"
-  - "return"
-  - "security"
-  - "technologies"
-  - "validated"
-  - "webinars"
+tags:
+  - ciscocert
+  - cisco
+  - ciscocert
+  - design
+  - isis
+  - mpls
+  - ospf
+  - security
+
 ---
 
 Hello everyone! :D

@@ -3,20 +3,9 @@ title: "IoT calls for security!"
 date: "2020-03-02"
 categories: 
   - "news"
-tags: 
-  - "cyberattacks"
-  - "cybercrime"
-  - "cybersecurity"
-  - "exposed"
-  - "industrial"
-  - "internet"
-  - "iot"
-  - "mindset"
-  - "network"
-  - "networking"
-  - "security"
-  - "vulnerabilities"
-  - "vulnerable"
+tags:
+  - security
+
 ---
 
 Many of us have heard the term "Internet of Things (IoT)" in this or another way, perhaps an advertisement, overhearing a conversation between geeks from the IT department (if you are not into IT), a discussion with colleagues (if you are a geek yourself), or in the news. What exactly do we mean with IoT?

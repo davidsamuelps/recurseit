@@ -3,17 +3,11 @@ title: "Cisco SD-WAN Data Policies"
 date: "2021-01-27"
 categories: 
   - "ccnp"
-tags: 
-  - "cflowd"
-  - "data"
-  - "policy"
-  - "prefix"
-  - "routing"
-  - "sd-wan"
-  - "sdwan"
-  - "tloc"
-  - "traffic"
-  - "viptela"
+tags:
+  - routing
+  - sdwan
+  - sdwan
+
 ---
 
 Data policies are one powerful tool for Cisco SD-WAN to deliver its promises. They allow specific traffic flows to be redirected or steered in a particular way within or throughout the SD-WAN overlay network. More specifically, Data Policies allow the solution to do:

@@ -3,16 +3,12 @@ title: "CLEUR and other updates!"
 date: "2020-02-11"
 categories: 
   - "news"
-tags: 
-  - "cisco"
-  - "ciscochampion"
-  - "ciscovip"
-  - "cleur"
-  - "friends"
-  - "podcast"
-  - "tfdx"
-  - "updates"
-  - "vip"
+tags:
+  - cisco
+  - ciscovip
+  - tfdx
+  - updates
+
 ---
 
 Hello everybody! :D

@@ -3,8 +3,6 @@ title: "Post-Cisco Live US!"
 date: "2018-07-12"
 categories: 
   - "news"
-tags: 
-  - "clus"
 coverImage: "img_9749.jpg"
 ---
 

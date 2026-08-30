@@ -3,31 +3,13 @@ title: "GRE Tunnels III: Security awakens"
 date: "2016-07-02"
 categories: 
   - "ccnp"
-tags: 
-  - "awakens"
-  - "bytes"
-  - "cisco"
-  - "connection"
-  - "encapsulate"
-  - "encapsulation"
-  - "friend"
-  - "gre"
-  - "internet"
-  - "ip"
-  - "ipsec"
-  - "keepalive"
-  - "matryoshka"
-  - "mtu"
-  - "multicast"
-  - "ninja"
-  - "overhead"
-  - "packet"
-  - "security"
-  - "transform"
-  - "transform-set"
-  - "tunnel"
-  - "tunnels"
-  - "unicast"
+tags:
+  - cisco
+  - gre
+  - ipsec
+  - multicast
+  - security
+  - tunnel
 coverImage: "recurseit3.jpg"
 ---
 

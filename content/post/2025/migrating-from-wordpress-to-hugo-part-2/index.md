@@ -5,13 +5,13 @@ date: "2025-03-21"
 #draft: true
 #categories: 
 #  - "ccnp"
-tags: 
-  - "hugo"
-  - "wordpress"
-  - "cloudflare"
-  - "DNS"
-  - "domain"
-  - "markdown"
+tags:
+  - hugo
+  - wordpress
+  - cloudflare
+  - domain
+  - markdown
+
 ---
 
 In the [previous post](https://recurseit.com/post/2025/migrating-from-wordpress-to-hugo-part-1/) we spoke about the migration process at a high level, and a set of steps was mentioned. Let us bring those steps back in the section below:
