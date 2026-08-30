@@ -10,7 +10,9 @@ tags:
 
 ---
 
-Data policies are one powerful tool for Cisco SD-WAN to deliver its promises. They allow specific traffic flows to be redirected or steered in a particular way within or throughout the SD-WAN overlay network. More specifically, Data Policies allow the solution to do:
+Data policies are one powerful tool for Cisco SD-WAN to deliver its promises. They allow specific traffic flows to be redirected or steered in a particular way within or throughout the SD-WAN overlay network.
+
+More specifically, Data Policies allow the solution to do:
 
 - Any modification affecting data plane forwarding
     - E.g. Packet marking, specific transport forwarding, Application Aware Routing (AAR), NAT, traffic redirection
